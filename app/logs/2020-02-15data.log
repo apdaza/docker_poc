@@ -1845,3 +1845,97 @@
 						LEFT  JOIN compromiso_responsable cr ON cr.com_id = c.com_id
 						LEFT  JOIN documento_actor da ON da.doa_id = cr.doa_id
                         WHERE    ORDER  BY  c.com_fecha_limite|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER  BY  c.com_fecha_limite' at line 12
+2020-02-15 20:00:30|admin|select * from opcion
+2020-02-15 20:00:30|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 20:00:30|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 20:00:30|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 20:00:30|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 20:00:30|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 20:00:30|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 20:00:30|admin|select opn_id as valor from opcion where opc_variable = 'compromisos'
+2020-02-15 20:00:30|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'compromisos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 20:00:30|admin|select opn_id as valor from opcion where opc_variable = 'compromisos'
+2020-02-15 20:00:30|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'compromisos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 20:00:30|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 20:00:30|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'compromisos'
+2020-02-15 20:00:30|admin|select * from documento_subtema where dot_id = 5 order by dos_nombre
+2020-02-15 20:00:30|admin|SELECT *
+                        FROM   documento d INNER JOIN
+                               documento_tipo AS tipo ON d.dti_id = tipo.dti_id INNER JOIN
+                               documento_subtema 	ds on ds.dos_id=d.dos_id
+                        WHERE   d.dos_id =  AND d.ope_id = 1 ORDER BY d.dos_id, d.doc_version|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND d.ope_id = 1 ORDER BY d.dos_id, d.doc_version' at line 5
+2020-02-15 20:00:30|admin|SELECT  r.*
+		FROM  documento_actor r INNER JOIN
+		      operador p ON p.ope_id = r.ope_id
+                WHERE   r.ope_id =1  order by r.doa_nombre
+2020-02-15 20:00:30|admin|select * from compromiso_estado where 1 order by ces_id
+2020-02-15 20:00:30|admin|select ope_sigla as valor from operador where ope_id = 1
+2020-02-15 20:00:30|admin|SELECT DISTINCT c.com_id, c.com_actividad, dti_nombre,dot_nombre,dos_nombre,doc_archivo,
+                        d.doc_version, c.com_fecha_limite,
+                        c.com_fecha_entrega, te.ces_nombre, c.com_observaciones
+                        FROM compromiso c
+						INNER JOIN documento d ON d.doc_id=c.doc_id
+						inner join documento_tipo td on d.dti_id = td.dti_id
+						inner join documento_tema tm on d.dot_id = tm.dot_id
+						INNER JOIN documento_subtema dos ON d.dos_id=dos.dos_id
+						INNER JOIN compromiso_estado te ON te.ces_id = c.ces_id
+						LEFT  JOIN compromiso_responsable cr ON cr.com_id = c.com_id
+						LEFT  JOIN documento_actor da ON da.doa_id = cr.doa_id
+                        WHERE    ORDER  BY  c.com_fecha_limite|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER  BY  c.com_fecha_limite' at line 12
+2020-02-15 20:00:43|admin|select * from opcion
+2020-02-15 20:00:43|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 20:00:43|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 20:00:43|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 20:00:43|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 20:00:43|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 20:00:43|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 20:00:43|admin|select opn_id as valor from opcion where opc_variable = 'cerrar'
+2020-02-15 20:00:43|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'cerrar' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 20:00:43|admin|select opn_id as valor from opcion where opc_variable = 'cerrar'
+2020-02-15 20:00:43|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'cerrar' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 20:00:43|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 20:00:43|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'cerrar'

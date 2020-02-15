@@ -1,0 +1,963 @@
+2020-02-15 17:48:11||select * from opcion|Table 'kbt_poc_2019.opcion' doesn't exist
+2020-02-15 17:48:11||select usu_id as valor from usuario where usu_login = '' and usu_clave = md5('')|Table 'kbt_poc_2019.usuario' doesn't exist
+2020-02-15 17:48:11||select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = -1
+				and o.opn_id in(0,1)
+				order by o.opc_orden|Table 'kbt_poc_2019.opcion' doesn't exist
+2020-02-15 17:48:11||select max(date_in) as valor from usuario_sec where usu_id = -1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 17:48:11||select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = -1 and o.opc_variable = 'cerrar'|Table 'kbt_poc_2019.perfil_x_opcion' doesn't exist
+2020-02-15 17:49:56||select * from opcion
+2020-02-15 17:49:56||select usu_id as valor from usuario where usu_login = '' and usu_clave = md5('')
+2020-02-15 17:49:56||select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = -1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 17:49:56||select max(date_in) as valor from usuario_sec where usu_id = -1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 17:49:56||select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = -1 and o.opc_variable = 'cerrar'
+2020-02-15 17:50:39||select * from opcion
+2020-02-15 17:50:39|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 17:50:39|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 17:50:39|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 17:50:39|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 17:50:39|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 17:50:39|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 17:50:39|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2020-02-15 17:50:39|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+                                    and o.opn_id in(2)
+                       ' at line 6
+2020-02-15 17:50:39|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 17:50:39|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'home'
+2020-02-15 17:50:39|admin|update usuario set usu_fecha_ultimo_ingreso = '2020-02-15' where usu_id = 1
+2020-02-15 17:50:48|admin|select * from opcion
+2020-02-15 17:50:48|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 17:50:48|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 17:50:48|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 17:50:48|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 17:50:48|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 17:50:48|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 17:50:48|admin|select opn_id as valor from opcion where opc_variable = 'comunicados'
+2020-02-15 17:50:48|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'comunicados' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 17:50:48|admin|select opn_id as valor from opcion where opc_variable = 'comunicados'
+2020-02-15 17:50:48|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'comunicados' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 17:50:48|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 17:50:48|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'comunicados'
+2020-02-15 17:50:48|admin|select per_id as valor from usuario u where u.usu_id = 1
+2020-02-15 17:50:48|admin|select deq_controla_alarmas as valor from documento_equipo where usu_id = 1
+2020-02-15 17:50:48|admin|select count(1) as valor from documento_comunicado d where d.doc_alarma = 1
+2020-02-15 17:50:48|admin|select * from documento_subtema where dot_id = 4 order by dos_nombre
+2020-02-15 17:50:48|admin|select * from documento_actor where ope_id=1 and dta_id <> 5 order by doa_nombre
+2020-02-15 17:50:48|admin|select * from documento_actor where  ope_id=1 and dta_id <> 5 order by doa_nombre
+2020-02-15 17:50:48|admin|select ope_sigla as valor from operador where ope_id = 1
+2020-02-15 17:50:50|admin|select * from opcion
+2020-02-15 17:50:50|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 17:50:50|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 17:50:50|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 17:50:50|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 17:50:50|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 17:50:50|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 17:50:50|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2020-02-15 17:50:50|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 17:50:50|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2020-02-15 17:50:50|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 17:50:50|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 17:50:50|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'documentos'
+2020-02-15 17:50:50|admin|select * from documento_tipo where 1 and dti_id < 99 order by dti_nombre
+2020-02-15 17:50:50|admin|select * from documento_estado where doe_id > 0 and 1 order by doe_id
+2020-02-15 17:50:50|admin|select ope_sigla as valor from operador where ope_id = 1
+2020-02-15 17:50:51|admin|select * from opcion
+2020-02-15 17:50:51|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 17:50:51|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 17:50:51|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 17:50:51|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 17:50:51|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 17:50:51|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 17:50:51|admin|select opn_id as valor from opcion where opc_variable = 'compromisos'
+2020-02-15 17:50:51|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'compromisos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 17:50:51|admin|select opn_id as valor from opcion where opc_variable = 'compromisos'
+2020-02-15 17:50:51|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'compromisos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 17:50:51|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 17:50:51|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'compromisos'
+2020-02-15 17:50:51|admin|select * from documento_subtema where dot_id = 5 order by dos_nombre
+2020-02-15 17:50:51|admin|SELECT *
+                        FROM   documento d INNER JOIN
+                               documento_tipo AS tipo ON d.dti_id = tipo.dti_id INNER JOIN
+                               documento_subtema 	ds on ds.dos_id=d.dos_id
+                        WHERE   d.dos_id =  AND d.ope_id = 1 ORDER BY d.dos_id, d.doc_version|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND d.ope_id = 1 ORDER BY d.dos_id, d.doc_version' at line 5
+2020-02-15 17:50:51|admin|SELECT  r.*
+		FROM  documento_actor r INNER JOIN
+		      operador p ON p.ope_id = r.ope_id
+                WHERE   r.ope_id =1  order by r.doa_nombre
+2020-02-15 17:50:51|admin|select * from compromiso_estado where 1 order by ces_id
+2020-02-15 17:50:51|admin|select ope_sigla as valor from operador where ope_id = 1
+2020-02-15 17:50:51|admin|SELECT DISTINCT c.com_id, c.com_actividad, dti_nombre,dot_nombre,dos_nombre,doc_archivo,
+                        d.doc_version, c.com_fecha_limite,
+                        c.com_fecha_entrega, te.ces_nombre, c.com_observaciones
+                        FROM compromiso c
+						INNER JOIN documento d ON d.doc_id=c.doc_id
+						inner join documento_tipo td on d.dti_id = td.dti_id
+						inner join documento_tema tm on d.dot_id = tm.dot_id
+						INNER JOIN documento_subtema dos ON d.dos_id=dos.dos_id
+						INNER JOIN compromiso_estado te ON te.ces_id = c.ces_id
+						LEFT  JOIN compromiso_responsable cr ON cr.com_id = c.com_id
+						LEFT  JOIN documento_actor da ON da.doa_id = cr.doa_id
+                        WHERE    ORDER  BY  c.com_fecha_limite|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER  BY  c.com_fecha_limite' at line 12
+2020-02-15 17:50:59|admin|select * from opcion
+2020-02-15 17:50:59|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 17:50:59|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 17:50:59|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 17:50:59|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 17:50:59|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 17:50:59|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 17:50:59|admin|select opn_id as valor from opcion where opc_variable = 'usuarios'
+2020-02-15 17:50:59|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'usuarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 17:50:59|admin|select opn_id as valor from opcion where opc_variable = 'usuarios'
+2020-02-15 17:50:59|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'usuarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 17:50:59|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 17:50:59|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'usuarios'
+2020-02-15 17:50:59|admin|select * from usuario u, perfil p where p.per_id=u.per_id and 1 order by usu_login
+2020-02-15 17:51:03|admin|select * from opcion
+2020-02-15 17:51:03|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 17:51:03|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 17:51:03|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 17:51:03|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 17:51:03|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 17:51:03|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 17:51:03|admin|select opn_id as valor from opcion where opc_variable = 'perfiles'
+2020-02-15 17:51:03|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'perfiles' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 17:51:03|admin|select opn_id as valor from opcion where opc_variable = 'perfiles'
+2020-02-15 17:51:03|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'perfiles' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 17:51:03|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 17:51:03|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'perfiles'
+2020-02-15 17:51:03|admin|select * from perfil where 1 order by per_nombre
+2020-02-15 17:51:06|admin|select * from opcion
+2020-02-15 17:51:06|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 17:51:06|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 17:51:06|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 17:51:06|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 17:51:06|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 17:51:06|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 17:51:06|admin|select opn_id as valor from opcion where opc_variable = 'compromisos'
+2020-02-15 17:51:06|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'compromisos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 17:51:06|admin|select opn_id as valor from opcion where opc_variable = 'compromisos'
+2020-02-15 17:51:06|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'compromisos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 17:51:06|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 17:51:06|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'compromisos'
+2020-02-15 17:51:06|admin|select * from documento_subtema where dot_id = 5 order by dos_nombre
+2020-02-15 17:51:06|admin|SELECT *
+                        FROM   documento d INNER JOIN
+                               documento_tipo AS tipo ON d.dti_id = tipo.dti_id INNER JOIN
+                               documento_subtema 	ds on ds.dos_id=d.dos_id
+                        WHERE   d.dos_id =  AND d.ope_id = 1 ORDER BY d.dos_id, d.doc_version|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND d.ope_id = 1 ORDER BY d.dos_id, d.doc_version' at line 5
+2020-02-15 17:51:06|admin|SELECT  r.*
+		FROM  documento_actor r INNER JOIN
+		      operador p ON p.ope_id = r.ope_id
+                WHERE   r.ope_id =1  order by r.doa_nombre
+2020-02-15 17:51:06|admin|select * from compromiso_estado where 1 order by ces_id
+2020-02-15 17:51:06|admin|select ope_sigla as valor from operador where ope_id = 1
+2020-02-15 17:51:06|admin|SELECT DISTINCT c.com_id, c.com_actividad, dti_nombre,dot_nombre,dos_nombre,doc_archivo,
+                        d.doc_version, c.com_fecha_limite,
+                        c.com_fecha_entrega, te.ces_nombre, c.com_observaciones
+                        FROM compromiso c
+						INNER JOIN documento d ON d.doc_id=c.doc_id
+						inner join documento_tipo td on d.dti_id = td.dti_id
+						inner join documento_tema tm on d.dot_id = tm.dot_id
+						INNER JOIN documento_subtema dos ON d.dos_id=dos.dos_id
+						INNER JOIN compromiso_estado te ON te.ces_id = c.ces_id
+						LEFT  JOIN compromiso_responsable cr ON cr.com_id = c.com_id
+						LEFT  JOIN documento_actor da ON da.doa_id = cr.doa_id
+                        WHERE    ORDER  BY  c.com_fecha_limite|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER  BY  c.com_fecha_limite' at line 12
+2020-02-15 17:51:14|admin|select * from opcion
+2020-02-15 17:51:14|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 17:51:14|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 17:51:14|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 17:51:14|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 17:51:14|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 17:51:14|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 17:51:14|admin|select opn_id as valor from opcion where opc_variable = 'compromisos'
+2020-02-15 17:51:14|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'compromisos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 17:51:14|admin|select opn_id as valor from opcion where opc_variable = 'compromisos'
+2020-02-15 17:51:14|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'compromisos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 17:51:14|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 17:51:14|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'compromisos'
+2020-02-15 17:51:14|admin|select * from documento_subtema where dot_id = 5 order by dos_nombre
+2020-02-15 17:51:14|admin|SELECT *
+                        FROM   documento d INNER JOIN
+                               documento_tipo AS tipo ON d.dti_id = tipo.dti_id INNER JOIN
+                               documento_subtema 	ds on ds.dos_id=d.dos_id
+                        WHERE   d.dos_id = 83 AND d.ope_id = 1 ORDER BY d.dos_id, d.doc_version
+2020-02-15 17:51:14|admin|SELECT  r.*
+		FROM  documento_actor r INNER JOIN
+		      operador p ON p.ope_id = r.ope_id
+                WHERE   r.ope_id =1  order by r.doa_nombre
+2020-02-15 17:51:14|admin|select * from compromiso_estado where 1 order by ces_id
+2020-02-15 17:51:14|admin|select ope_sigla as valor from operador where ope_id = 1
+2020-02-15 17:51:14|admin|SELECT DISTINCT c.com_id, c.com_actividad, dti_nombre,dot_nombre,dos_nombre,doc_archivo,
+                        d.doc_version, c.com_fecha_limite,
+                        c.com_fecha_entrega, te.ces_nombre, c.com_observaciones
+                        FROM compromiso c
+						INNER JOIN documento d ON d.doc_id=c.doc_id
+						inner join documento_tipo td on d.dti_id = td.dti_id
+						inner join documento_tema tm on d.dot_id = tm.dot_id
+						INNER JOIN documento_subtema dos ON d.dos_id=dos.dos_id
+						INNER JOIN compromiso_estado te ON te.ces_id = c.ces_id
+						LEFT  JOIN compromiso_responsable cr ON cr.com_id = c.com_id
+						LEFT  JOIN documento_actor da ON da.doa_id = cr.doa_id
+                        WHERE    d.dos_id = 83 and d.ope_id = 1 ORDER  BY  c.com_fecha_limite
+2020-02-15 17:51:14|admin|SELECT doa_nombre
+						FROM documento_actor r  INNER JOIN
+							 compromiso_responsable cr on r.doa_id=cr.doa_id INNER JOIN
+							 compromiso c on cr.com_id=c.com_id
+						WHERE cr.com_id=1 order by doa_nombre
+2020-02-15 18:01:15|admin|select * from opcion
+2020-02-15 18:01:15|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 18:01:15|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 18:01:15|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:01:15|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 18:01:15|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 18:01:15|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:01:15|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2020-02-15 18:01:15|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:01:15|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2020-02-15 18:01:15|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:01:15|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 18:01:15|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'home'
+2020-02-15 18:01:15|admin|update usuario set usu_fecha_ultimo_ingreso = '2020-02-15' where usu_id = 1
+2020-02-15 18:01:40|admin|select * from opcion
+2020-02-15 18:01:40|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 18:01:40|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 18:01:40|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:01:40|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 18:01:40|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 18:01:40|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:01:40|admin|select opn_id as valor from opcion where opc_variable = 'compromisos'
+2020-02-15 18:01:40|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'compromisos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:01:40|admin|select opn_id as valor from opcion where opc_variable = 'compromisos'
+2020-02-15 18:01:40|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'compromisos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:01:40|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 18:01:40|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'compromisos'
+2020-02-15 18:01:40|admin|select * from documento_subtema where dot_id = 5 order by dos_nombre
+2020-02-15 18:01:40|admin|SELECT *
+                        FROM   documento d INNER JOIN
+                               documento_tipo AS tipo ON d.dti_id = tipo.dti_id INNER JOIN
+                               documento_subtema 	ds on ds.dos_id=d.dos_id
+                        WHERE   d.dos_id =  AND d.ope_id = 1 ORDER BY d.dos_id, d.doc_version|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND d.ope_id = 1 ORDER BY d.dos_id, d.doc_version' at line 5
+2020-02-15 18:01:40|admin|SELECT  r.*
+		FROM  documento_actor r INNER JOIN
+		      operador p ON p.ope_id = r.ope_id
+                WHERE   r.ope_id =1  order by r.doa_nombre
+2020-02-15 18:01:40|admin|select * from compromiso_estado where 1 order by ces_id
+2020-02-15 18:01:40|admin|select ope_sigla as valor from operador where ope_id = 1
+2020-02-15 18:01:40|admin|SELECT DISTINCT c.com_id, c.com_actividad, dti_nombre,dot_nombre,dos_nombre,doc_archivo,
+                        d.doc_version, c.com_fecha_limite,
+                        c.com_fecha_entrega, te.ces_nombre, c.com_observaciones
+                        FROM compromiso c
+						INNER JOIN documento d ON d.doc_id=c.doc_id
+						inner join documento_tipo td on d.dti_id = td.dti_id
+						inner join documento_tema tm on d.dot_id = tm.dot_id
+						INNER JOIN documento_subtema dos ON d.dos_id=dos.dos_id
+						INNER JOIN compromiso_estado te ON te.ces_id = c.ces_id
+						LEFT  JOIN compromiso_responsable cr ON cr.com_id = c.com_id
+						LEFT  JOIN documento_actor da ON da.doa_id = cr.doa_id
+                        WHERE    ORDER  BY  c.com_fecha_limite|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER  BY  c.com_fecha_limite' at line 12
+2020-02-15 18:01:45|admin|select * from opcion
+2020-02-15 18:01:45|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 18:01:45|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 18:01:45|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:01:45|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 18:01:45|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 18:01:45|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:01:45|admin|select opn_id as valor from opcion where opc_variable = 'compromisos'
+2020-02-15 18:01:45|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'compromisos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:01:45|admin|select opn_id as valor from opcion where opc_variable = 'compromisos'
+2020-02-15 18:01:45|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'compromisos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:01:45|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 18:01:45|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'compromisos'
+2020-02-15 18:01:45|admin|select * from documento_subtema where dot_id = 5 order by dos_nombre
+2020-02-15 18:01:45|admin|SELECT *
+                        FROM   documento d INNER JOIN
+                               documento_tipo AS tipo ON d.dti_id = tipo.dti_id INNER JOIN
+                               documento_subtema 	ds on ds.dos_id=d.dos_id
+                        WHERE   d.dos_id = 83 AND d.ope_id = 1 ORDER BY d.dos_id, d.doc_version
+2020-02-15 18:01:45|admin|SELECT  r.*
+		FROM  documento_actor r INNER JOIN
+		      operador p ON p.ope_id = r.ope_id
+                WHERE   r.ope_id =1  order by r.doa_nombre
+2020-02-15 18:01:45|admin|select * from compromiso_estado where 1 order by ces_id
+2020-02-15 18:01:45|admin|select ope_sigla as valor from operador where ope_id = 1
+2020-02-15 18:01:45|admin|SELECT DISTINCT c.com_id, c.com_actividad, dti_nombre,dot_nombre,dos_nombre,doc_archivo,
+                        d.doc_version, c.com_fecha_limite,
+                        c.com_fecha_entrega, te.ces_nombre, c.com_observaciones
+                        FROM compromiso c
+						INNER JOIN documento d ON d.doc_id=c.doc_id
+						inner join documento_tipo td on d.dti_id = td.dti_id
+						inner join documento_tema tm on d.dot_id = tm.dot_id
+						INNER JOIN documento_subtema dos ON d.dos_id=dos.dos_id
+						INNER JOIN compromiso_estado te ON te.ces_id = c.ces_id
+						LEFT  JOIN compromiso_responsable cr ON cr.com_id = c.com_id
+						LEFT  JOIN documento_actor da ON da.doa_id = cr.doa_id
+                        WHERE    d.dos_id = 83 and d.ope_id = 1 ORDER  BY  c.com_fecha_limite
+2020-02-15 18:01:45|admin|SELECT doa_nombre
+						FROM documento_actor r  INNER JOIN
+							 compromiso_responsable cr on r.doa_id=cr.doa_id INNER JOIN
+							 compromiso c on cr.com_id=c.com_id
+						WHERE cr.com_id=1 order by doa_nombre
+2020-02-15 18:04:34|admin|select * from opcion
+2020-02-15 18:04:34|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 18:04:34|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 18:04:34|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:04:34|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 18:04:34|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 18:04:34|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:04:34|admin|select opn_id as valor from opcion where opc_variable = 'compromisos'
+2020-02-15 18:04:34|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'compromisos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:04:34|admin|select opn_id as valor from opcion where opc_variable = 'compromisos'
+2020-02-15 18:04:34|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'compromisos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:04:34|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 18:04:34|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'compromisos'
+2020-02-15 18:04:34|admin|select * from documento_subtema where dot_id = 5 order by dos_nombre
+2020-02-15 18:04:34|admin|SELECT *
+                        FROM   documento d INNER JOIN
+                               documento_tipo AS tipo ON d.dti_id = tipo.dti_id INNER JOIN
+                               documento_subtema 	ds on ds.dos_id=d.dos_id
+                        WHERE   d.dos_id = 83 AND d.ope_id = 1 ORDER BY d.dos_id, d.doc_version
+2020-02-15 18:04:34|admin|SELECT  r.*
+		FROM  documento_actor r INNER JOIN
+		      operador p ON p.ope_id = r.ope_id
+                WHERE   r.ope_id =1  order by r.doa_nombre
+2020-02-15 18:04:34|admin|select * from compromiso_estado where 1 order by ces_id
+2020-02-15 18:04:34|admin|select ope_sigla as valor from operador where ope_id = 1
+2020-02-15 18:04:34|admin|SELECT DISTINCT c.com_id, c.com_actividad, dti_nombre,dot_nombre,dos_nombre,doc_archivo,
+                        d.doc_version, c.com_fecha_limite,
+                        c.com_fecha_entrega, te.ces_nombre, c.com_observaciones
+                        FROM compromiso c
+						INNER JOIN documento d ON d.doc_id=c.doc_id
+						inner join documento_tipo td on d.dti_id = td.dti_id
+						inner join documento_tema tm on d.dot_id = tm.dot_id
+						INNER JOIN documento_subtema dos ON d.dos_id=dos.dos_id
+						INNER JOIN compromiso_estado te ON te.ces_id = c.ces_id
+						LEFT  JOIN compromiso_responsable cr ON cr.com_id = c.com_id
+						LEFT  JOIN documento_actor da ON da.doa_id = cr.doa_id
+                        WHERE    d.dos_id = 83 and d.ope_id = 1 ORDER  BY  c.com_fecha_limite
+2020-02-15 18:04:34|admin|SELECT doa_nombre
+						FROM documento_actor r  INNER JOIN
+							 compromiso_responsable cr on r.doa_id=cr.doa_id INNER JOIN
+							 compromiso c on cr.com_id=c.com_id
+						WHERE cr.com_id=1 order by doa_nombre
+2020-02-15 18:04:39|admin|select * from opcion
+2020-02-15 18:04:39|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 18:04:39|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 18:04:39|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:04:39|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 18:04:39|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 18:04:39|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:04:39|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2020-02-15 18:04:39|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:04:39|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2020-02-15 18:04:39|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:04:39|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 18:04:39|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'home'
+2020-02-15 18:04:39|admin|update usuario set usu_fecha_ultimo_ingreso = '2020-02-15' where usu_id = 1
+2020-02-15 18:30:57|admin|select * from opcion
+2020-02-15 18:30:57|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 18:30:57|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 18:30:57|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:30:57|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 18:30:57|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 18:30:57|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:30:57|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2020-02-15 18:30:57|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:30:57|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2020-02-15 18:30:57|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:30:57|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 18:30:57|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'home'
+2020-02-15 18:30:57|admin|update usuario set usu_fecha_ultimo_ingreso = '2020-02-15' where usu_id = 1
+2020-02-15 18:30:59|admin|select * from opcion
+2020-02-15 18:30:59|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 18:30:59|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 18:30:59|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:30:59|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 18:30:59|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 18:30:59|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:30:59|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2020-02-15 18:30:59|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:30:59|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2020-02-15 18:30:59|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:30:59|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 18:30:59|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'home'
+2020-02-15 18:30:59|admin|update usuario set usu_fecha_ultimo_ingreso = '2020-02-15' where usu_id = 1
+2020-02-15 18:31:02|admin|select * from opcion
+2020-02-15 18:31:02|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 18:31:02|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 18:31:02|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:31:02|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 18:31:02|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 18:31:02|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:31:02|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2020-02-15 18:31:02|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:31:02|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2020-02-15 18:31:02|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:31:02|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 18:31:02|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'home'
+2020-02-15 18:31:02|admin|update usuario set usu_fecha_ultimo_ingreso = '2020-02-15' where usu_id = 1
+2020-02-15 18:31:03|admin|select * from opcion
+2020-02-15 18:31:03|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 18:31:03|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 18:31:03|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:31:03|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 18:31:03|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 18:31:03|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:31:03|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2020-02-15 18:31:03|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:31:03|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2020-02-15 18:31:03|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:31:03|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 18:31:03|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'home'
+2020-02-15 18:31:03|admin|update usuario set usu_fecha_ultimo_ingreso = '2020-02-15' where usu_id = 1
+2020-02-15 18:32:49|admin|select * from opcion
+2020-02-15 18:32:49|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 18:32:49|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 18:32:49|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:32:49|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 18:32:49|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 18:32:49|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:32:49|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2020-02-15 18:32:49|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:32:49|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2020-02-15 18:32:49|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:32:49|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 18:32:49|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'home'
+2020-02-15 18:32:49|admin|update usuario set usu_fecha_ultimo_ingreso = '2020-02-15' where usu_id = 1
+2020-02-15 18:34:10|admin|select * from opcion
+2020-02-15 18:34:10|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 18:34:10|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 18:34:10|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:34:10|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 18:34:10|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 18:34:10|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:34:10|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2020-02-15 18:34:10|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:34:10|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2020-02-15 18:34:10|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:34:10|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 18:34:10|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'home'
+2020-02-15 18:34:10|admin|update usuario set usu_fecha_ultimo_ingreso = '2020-02-15' where usu_id = 1
+2020-02-15 18:34:26|admin|select * from opcion
+2020-02-15 18:34:26|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 18:34:26|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 18:34:26|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:34:26|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 18:34:26|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 18:34:26|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:34:26|admin|select opn_id as valor from opcion where opc_variable = 'cerrar'
+2020-02-15 18:34:26|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'cerrar' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:34:26|admin|select opn_id as valor from opcion where opc_variable = 'cerrar'
+2020-02-15 18:34:26|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'cerrar' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:34:26|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 18:34:26|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'cerrar'
+2020-02-15 18:35:35|admin|select * from opcion
+2020-02-15 18:35:35|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 18:35:35|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 18:35:35|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:35:35|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 18:35:35|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 18:35:35|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:35:35|admin|select opn_id as valor from opcion where opc_variable = 'cerrar'
+2020-02-15 18:35:35|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'cerrar' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:35:35|admin|select opn_id as valor from opcion where opc_variable = 'cerrar'
+2020-02-15 18:35:35|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'cerrar' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2020-02-15 18:35:35|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 18:35:35|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'cerrar'
+2020-02-15 18:35:52|admin|select * from opcion
+2020-02-15 18:35:52|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2020-02-15 18:35:52|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2020-02-15 18:35:52|admin|select max(date_in) as valor from usuario_sec where usu_id = 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:35:52|admin|select usu_nombre as valor from usuario where usu_id = 1
+2020-02-15 18:35:52|admin|select usu_apellido as valor from usuario where usu_id = 1
+2020-02-15 18:35:52|admin|select * from usuario_sec where usu_id= 1|Table 'kbt_poc_2019.usuario_sec' doesn't exist
+2020-02-15 18:35:52|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2020-02-15 18:35:52|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+                                    and o.opn_id in(2)
+                       ' at line 6
+2020-02-15 18:35:52|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2020-02-15 18:35:52|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'home'
+2020-02-15 18:35:52|admin|update usuario set usu_fecha_ultimo_ingreso = '2020-02-15' where usu_id = 1

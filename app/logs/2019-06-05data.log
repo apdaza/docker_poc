@@ -1,0 +1,475 @@
+2019-06-05 14:21:15|admin|select * from opcion
+2019-06-05 14:21:15|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('Lo212499')
+2019-06-05 14:21:15|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2019-06-05 14:21:15|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2019-06-05 14:21:15|admin|select usu_nombre as valor from usuario where usu_id = 1
+2019-06-05 14:21:15|admin|select usu_apellido as valor from usuario where usu_id = 1
+2019-06-05 14:21:15|admin|select * from usuario_sec where usu_id= 1
+2019-06-05 14:21:15|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:21:15|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:21:15|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:21:15|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:21:15|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2019-06-05 14:21:15|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'inventarios&task=listEquipos'
+2019-06-05 14:21:15|admin|select per_id as valor from usuario u where u.usu_id = 1
+2019-06-05 14:21:15|admin|SELECT  *
+				FROM  inventario ii
+				INNER JOIN inventario_grupo	ig  ON  ig.ivg_id = ii.ivg_id
+        INNER JOIN inventario_equipo 	iq ON iq.ine_id = ii.ine_id
+        INNER JOIN inventario_marca 	im ON im.inm_id = ii.inm_id
+        INNER JOIN inventario_estado 	ie ON ie.ies_id = ii.ies_id
+        WHERE  ii.ivg_id=1
+2019-06-05 14:21:15|admin|select ivg_nombre as valor from inventario_grupo where ivg_id = 1
+2019-06-05 14:21:18|admin|select * from opcion
+2019-06-05 14:21:18|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('Lo212499')
+2019-06-05 14:21:18|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2019-06-05 14:21:18|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2019-06-05 14:21:18|admin|select usu_nombre as valor from usuario where usu_id = 1
+2019-06-05 14:21:18|admin|select usu_apellido as valor from usuario where usu_id = 1
+2019-06-05 14:21:18|admin|select * from usuario_sec where usu_id= 1
+2019-06-05 14:21:18|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:21:18|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:21:18|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:21:18|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:21:18|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2019-06-05 14:21:18|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'inventarios&task=addEquipo'
+2019-06-05 14:21:18|admin|select ivg_nombre as valor from inventario_grupo where ivg_id = 1
+2019-06-05 14:21:18|admin|SELECT * FROM  inventario_equipo WHERE  1  order by ine_nombre
+2019-06-05 14:21:18|admin|SELECT * FROM  inventario_marca WHERE  1  order by inm_nombre
+2019-06-05 14:21:18|admin|SELECT * FROM  inventario_estado WHERE  1  order by ies_nombre
+2019-06-05 14:21:38|admin|select * from opcion
+2019-06-05 14:21:38|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('Lo212499')
+2019-06-05 14:21:38|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2019-06-05 14:21:38|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2019-06-05 14:21:38|admin|select usu_nombre as valor from usuario where usu_id = 1
+2019-06-05 14:21:38|admin|select usu_apellido as valor from usuario where usu_id = 1
+2019-06-05 14:21:38|admin|select * from usuario_sec where usu_id= 1
+2019-06-05 14:21:38|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:21:38|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:21:38|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:21:38|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:21:38|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2019-06-05 14:21:38|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'inventarios&task=saveAddEquipo'
+2019-06-05 14:21:47|admin|select * from opcion
+2019-06-05 14:21:47|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('Lo212499')
+2019-06-05 14:21:47|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2019-06-05 14:21:47|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2019-06-05 14:21:47|admin|select usu_nombre as valor from usuario where usu_id = 1
+2019-06-05 14:21:47|admin|select usu_apellido as valor from usuario where usu_id = 1
+2019-06-05 14:21:47|admin|select * from usuario_sec where usu_id= 1
+2019-06-05 14:21:47|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:21:47|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:21:47|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:21:47|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:21:47|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2019-06-05 14:21:47|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'inventarios&task=saveAddEquipo'
+2019-06-05 14:23:18|admin|select * from opcion
+2019-06-05 14:23:18|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('Lo212499')
+2019-06-05 14:23:18|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2019-06-05 14:23:18|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2019-06-05 14:23:18|admin|select usu_nombre as valor from usuario where usu_id = 1
+2019-06-05 14:23:18|admin|select usu_apellido as valor from usuario where usu_id = 1
+2019-06-05 14:23:18|admin|select * from usuario_sec where usu_id= 1
+2019-06-05 14:23:18|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:23:18|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:23:18|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:23:18|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:23:18|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2019-06-05 14:23:18|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'inventarios&task=saveAddEquipo'
+2019-06-05 14:23:19|admin|insert into `inventario`(ivg_id,ine_id,inm_id,ini_modelo,ini_serie,ini_placa,ini_fecha_compra,ies_id,ini_descripcion)values('1','1','19','asdas','asdasd','asdsad','2019-06-11','12','asdasdasd')
+2019-06-05 14:23:21|admin|select * from opcion
+2019-06-05 14:23:21|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('Lo212499')
+2019-06-05 14:23:21|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2019-06-05 14:23:21|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2019-06-05 14:23:21|admin|select usu_nombre as valor from usuario where usu_id = 1
+2019-06-05 14:23:21|admin|select usu_apellido as valor from usuario where usu_id = 1
+2019-06-05 14:23:21|admin|select * from usuario_sec where usu_id= 1
+2019-06-05 14:23:21|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:23:21|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:23:21|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:23:21|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:23:21|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2019-06-05 14:23:21|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'inventarios&task=listEquipos'
+2019-06-05 14:23:21|admin|select per_id as valor from usuario u where u.usu_id = 1
+2019-06-05 14:23:21|admin|SELECT  *
+				FROM  inventario ii
+				INNER JOIN inventario_grupo	ig  ON  ig.ivg_id = ii.ivg_id
+        INNER JOIN inventario_equipo 	iq ON iq.ine_id = ii.ine_id
+        INNER JOIN inventario_marca 	im ON im.inm_id = ii.inm_id
+        INNER JOIN inventario_estado 	ie ON ie.ies_id = ii.ies_id
+        WHERE  ii.ivg_id=1
+2019-06-05 14:23:21|admin|select ivg_nombre as valor from inventario_grupo where ivg_id = 1
+2019-06-05 14:23:27|admin|select * from opcion
+2019-06-05 14:23:27|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('Lo212499')
+2019-06-05 14:23:27|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2019-06-05 14:23:27|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2019-06-05 14:23:27|admin|select usu_nombre as valor from usuario where usu_id = 1
+2019-06-05 14:23:27|admin|select usu_apellido as valor from usuario where usu_id = 1
+2019-06-05 14:23:27|admin|select * from usuario_sec where usu_id= 1
+2019-06-05 14:23:27|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:23:27|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:23:27|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:23:27|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:23:27|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2019-06-05 14:23:27|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'inventarios&task=editEquipo'
+2019-06-05 14:23:27|admin|SELECT *
+            FROM inventario iv
+				WHERE iv.ini_id= 5
+2019-06-05 14:23:27|admin|SELECT * FROM  inventario_equipo WHERE  1  order by ine_nombre
+2019-06-05 14:23:27|admin|SELECT * FROM  inventario_marca WHERE  1  order by inm_nombre
+2019-06-05 14:23:27|admin|SELECT * FROM  inventario_estado WHERE  1  order by ies_nombre
+2019-06-05 14:23:37|admin|select * from opcion
+2019-06-05 14:23:37|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('Lo212499')
+2019-06-05 14:23:37|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2019-06-05 14:23:37|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2019-06-05 14:23:37|admin|select usu_nombre as valor from usuario where usu_id = 1
+2019-06-05 14:23:37|admin|select usu_apellido as valor from usuario where usu_id = 1
+2019-06-05 14:23:37|admin|select * from usuario_sec where usu_id= 1
+2019-06-05 14:23:37|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:23:37|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:23:37|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:23:37|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:23:37|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2019-06-05 14:23:37|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'inventarios&task=saveEditEquipo'
+2019-06-05 14:23:37|admin|update inventario set ine_id = '1', inm_id = '19', ini_modelo = 'asdas', ini_serie = 'asdasd', ini_placa = 'asdsad', ini_fecha_compra = '2019-06-11', ies_id = '12', ini_descripcion = 'una prueba de edición' where ini_id = 5
+2019-06-05 14:23:39|admin|select * from opcion
+2019-06-05 14:23:39|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('Lo212499')
+2019-06-05 14:23:39|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2019-06-05 14:23:39|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2019-06-05 14:23:39|admin|select usu_nombre as valor from usuario where usu_id = 1
+2019-06-05 14:23:39|admin|select usu_apellido as valor from usuario where usu_id = 1
+2019-06-05 14:23:39|admin|select * from usuario_sec where usu_id= 1
+2019-06-05 14:23:39|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:23:39|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:23:39|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:23:39|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:23:39|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2019-06-05 14:23:39|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'inventarios&task=listEquipos'
+2019-06-05 14:23:39|admin|select per_id as valor from usuario u where u.usu_id = 1
+2019-06-05 14:23:39|admin|SELECT  *
+				FROM  inventario ii
+				INNER JOIN inventario_grupo	ig  ON  ig.ivg_id = ii.ivg_id
+        INNER JOIN inventario_equipo 	iq ON iq.ine_id = ii.ine_id
+        INNER JOIN inventario_marca 	im ON im.inm_id = ii.inm_id
+        INNER JOIN inventario_estado 	ie ON ie.ies_id = ii.ies_id
+        WHERE  ii.ivg_id=1
+2019-06-05 14:23:39|admin|select ivg_nombre as valor from inventario_grupo where ivg_id = 1
+2019-06-05 14:47:52|admin|select * from opcion
+2019-06-05 14:47:52|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('Lo212499')
+2019-06-05 14:47:52|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2019-06-05 14:47:52|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2019-06-05 14:47:52|admin|select usu_nombre as valor from usuario where usu_id = 1
+2019-06-05 14:47:52|admin|select usu_apellido as valor from usuario where usu_id = 1
+2019-06-05 14:47:52|admin|select * from usuario_sec where usu_id= 1
+2019-06-05 14:47:52|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:47:52|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:47:52|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:47:52|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:47:52|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2019-06-05 14:47:52|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'inventarios&task=editEquipo'
+2019-06-05 14:47:52|admin|SELECT *
+            FROM inventario iv
+				WHERE iv.ini_id= 3
+2019-06-05 14:47:52|admin|SELECT * FROM  inventario_equipo WHERE  1  order by ine_nombre
+2019-06-05 14:47:52|admin|SELECT * FROM  inventario_marca WHERE  1  order by inm_nombre
+2019-06-05 14:47:52|admin|SELECT * FROM  inventario_estado WHERE  1  order by ies_nombre
+2019-06-05 14:47:59|admin|select * from opcion
+2019-06-05 14:47:59|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('Lo212499')
+2019-06-05 14:47:59|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2019-06-05 14:47:59|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2019-06-05 14:47:59|admin|select usu_nombre as valor from usuario where usu_id = 1
+2019-06-05 14:47:59|admin|select usu_apellido as valor from usuario where usu_id = 1
+2019-06-05 14:47:59|admin|select * from usuario_sec where usu_id= 1
+2019-06-05 14:47:59|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:47:59|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:47:59|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:47:59|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:47:59|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2019-06-05 14:47:59|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'inventarios&task=saveEditEquipo'
+2019-06-05 14:47:59|admin|update inventario set ine_id = '1', inm_id = '17', ini_modelo = 'f51234', ini_serie = '123', ini_placa = 'f5432', ini_fecha_compra = '2019-06-05', ies_id = '3', ini_descripcion = 'una prueba' where ini_id = 3
+2019-06-05 14:48:00|admin|select * from opcion
+2019-06-05 14:48:00|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('Lo212499')
+2019-06-05 14:48:00|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2019-06-05 14:48:00|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2019-06-05 14:48:00|admin|select usu_nombre as valor from usuario where usu_id = 1
+2019-06-05 14:48:00|admin|select usu_apellido as valor from usuario where usu_id = 1
+2019-06-05 14:48:00|admin|select * from usuario_sec where usu_id= 1
+2019-06-05 14:48:00|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:48:00|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:48:00|admin|select opn_id as valor from opcion where opc_variable = 'inventarios'
+2019-06-05 14:48:00|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'inventarios' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2019-06-05 14:48:00|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2019-06-05 14:48:00|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'inventarios&task=listEquipos'
+2019-06-05 14:48:00|admin|select per_id as valor from usuario u where u.usu_id = 1
+2019-06-05 14:48:00|admin|SELECT  *
+				FROM  inventario ii
+				INNER JOIN inventario_grupo	ig  ON  ig.ivg_id = ii.ivg_id
+        INNER JOIN inventario_equipo 	iq ON iq.ine_id = ii.ine_id
+        INNER JOIN inventario_marca 	im ON im.inm_id = ii.inm_id
+        INNER JOIN inventario_estado 	ie ON ie.ies_id = ii.ies_id
+        WHERE  ii.ivg_id=1
+2019-06-05 14:48:01|admin|select ivg_nombre as valor from inventario_grupo where ivg_id = 1

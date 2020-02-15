@@ -26,6 +26,7 @@
 ?>
         <h1 class="font-weight-light">Bienvenido!</h1>
        <div class="text-center">
-            <!--img src="templates/img/inter123.png" class="mw-100 mx-auto mb-3" alt=""><br>
-            <img src="templates/img/logo_secretaria_seguridad_color.png" class="mw-100 mx-auto mb-3" alt=""-->
+            <img src="templates/img/logo-poc.png" class="mw-100 mx-auto mb-3" alt=""><br>
+            <!--img src="templates/img/logo_secretaria_seguridad_color.png" class="mw-100 mx-auto mb-3" alt=""-->
+            <p class="mt-2">Programe, Organice y Controle</p>
         </div>

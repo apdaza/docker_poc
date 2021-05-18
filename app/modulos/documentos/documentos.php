@@ -1,6 +1,6 @@
 <?php
 /**
-* Sistema POC
+* Sistema GPC
 *
 *<ul>
 * <li> MadeOpen <madeopensoftware.com></li>
@@ -18,7 +18,7 @@
 * @package  modulos
 * @subpackage document
 * @author Alejandro Daza
-* @version 2019.02
+* @version 2020.01
 * @copyright apdaza
 */
 	//no permite el acceso directo

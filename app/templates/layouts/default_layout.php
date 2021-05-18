@@ -1,23 +1,23 @@
 <?php
 /**
- * Sistema POC
+ * Sistema GPC
  *
  * <ul>
  * <li> Madeopen (http://madeopensoftware.com)</li>
- * <li> Proyecto kbt</li>
+ * <li> Proyecto GPC</li>
  * <li> apdaza@gmail.com </li>
  * </ul>
  */
 /**
  * @author apdaza
- * @version 2019.01
+ * @version 2020.01
  * @copyright apdaza
  */
 //no permite el acceso directo
 defined('_VALID_PRY') or die('Restricted access to this level');
 $html = new CHtml(APP_TITLE);
     //Clase General Colores 123 CSS
-$html->addEstilo('123sidebar.css');
+$html->addEstilo('GPCsidebar.css');
 $html->addEstilo('calendar/calendar-blue.css');
 
 $html->addScript('base/jquery.min.js');
@@ -47,8 +47,8 @@ $html->abrirHtml();
                 <img src="templates/img/loader-bg.png" alt="" class="logo-bg-image">
             </div>
 
-            <h2 class="mt-3 font-weight-light">Sistema POC</h2>
-            <p class="mt-2 text-white">Programe, Organice y Controle</p>
+            <h2 class="mt-3 font-weight-light">Sistema GPC</h2>
+            <p class="mt-2 text-white">Gestión de proyectos curriculares</p>
         </div>
     </div>
     <!-- fin de loader  -->
@@ -59,7 +59,7 @@ $html->abrirHtml();
                 <div class="row align-items-center">
                     <div class="col-auto pl-0">
                         <button class="btn pink-gradient btn-icon" id="left-menu"><i class="material-icons">menu</i></button>
-                        <a href="#" class="logo"><!--img src="templates/img/Logo_kbt.png" alt=""--><span class="text-hide-xs"><b>Sistema</b> POC</span></a>
+                        <a href="#" class="logo"><img src="templates/img/logo_sistemas.png" alt=""><span class="text-hide-xs"><b>Sistema</b> GPC</span></a>
                     </div>
                     <div class="col text-center p-xs-0">
                         <ul class="time-day">

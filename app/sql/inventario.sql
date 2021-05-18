@@ -122,7 +122,7 @@ CREATE TABLE `inventario` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1 COMMENT='contiene los inventarios de la concesion';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
--------------------------------------------------------
+
 --
 -- Table structure for table `inventario_soporte`
 --

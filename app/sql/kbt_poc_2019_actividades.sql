@@ -33,7 +33,7 @@ CREATE TABLE `actividad` (
   `act_descripcion` varchar(250) NOT NULL COMMENT 'descripción de la actividad',
   `act_fecha_inicio` date NOT NULL COMMENT 'fecha de inicio de la actividad',
   `act_fecha_fin` date DEFAULT NULL COMMENT 'fecha final de la actividad',
-  `usu_id` int(11) NOT NULL COMMENT 'usuario eresponsable',
+  `usu_id` int(11) NOT NULL COMMENT 'usuario responsable',
   `ace_id` int(11) NOT NULL COMMENT 'estado de la actividad',
   `act_inconvenientes` text COMMENT 'inconvenientes presentados durante la actividad',
   `acs_id` int(11) NOT NULL COMMENT 'subsistema de la actividad'

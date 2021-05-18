@@ -1,0 +1,1643 @@
+2021-05-02 00:28:24||select * from opcion
+2021-05-02 00:28:24||select usu_id as valor from usuario where usu_login = '' and usu_clave = md5('')
+2021-05-02 00:28:24||select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = -1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:28:24||select max(date_in) as valor from usuario_sec where usu_id = -1
+2021-05-02 00:28:24||select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = -1 and o.opc_variable = 'cerrar'
+2021-05-02 00:29:49||select * from opcion
+2021-05-02 00:29:49|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:29:49|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:29:49|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:29:49|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:29:49|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:29:49|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:29:49|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2021-05-02 00:29:49|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+                                    and o.opn_id in(2)
+                  ...' at line 6
+2021-05-02 00:29:49|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:29:49|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'home'
+2021-05-02 00:29:49|admin|update usuario set usu_fecha_ultimo_ingreso = '2021-05-02' where usu_id = 1
+2021-05-02 00:30:05|admin|select * from opcion
+2021-05-02 00:30:05|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:30:05|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:30:05|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:30:05|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:30:05|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:30:05|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:30:05|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2021-05-02 00:30:05|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:30:05|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2021-05-02 00:30:05|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:30:05|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:30:05|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'home'
+2021-05-02 00:30:05|admin|update usuario set usu_fecha_ultimo_ingreso = '2021-05-02' where usu_id = 1
+2021-05-02 00:30:11|admin|select * from opcion
+2021-05-02 00:30:11|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:30:11|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:30:11|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:30:11|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:30:11|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:30:11|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:30:11|admin|select opn_id as valor from opcion where opc_variable = 'compromisos'
+2021-05-02 00:30:11|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'compromisos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:30:11|admin|select opn_id as valor from opcion where opc_variable = 'compromisos'
+2021-05-02 00:30:11|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'compromisos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:30:11|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:30:11|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'compromisos'
+2021-05-02 00:30:11|admin|select * from documento_subtema where dot_id = 5 order by dos_nombre
+2021-05-02 00:30:11|admin|SELECT *
+                        FROM   documento d INNER JOIN
+                               documento_tipo AS tipo ON d.dti_id = tipo.dti_id INNER JOIN
+                               documento_subtema 	ds on ds.dos_id=d.dos_id
+                        WHERE   d.dos_id =  AND d.ope_id = 1 ORDER BY d.dos_id, d.doc_version|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND d.ope_id = 1 ORDER BY d.dos_id, d.doc_version' at line 5
+2021-05-02 00:30:11|admin|SELECT  r.*
+		FROM  documento_actor r INNER JOIN
+		      operador p ON p.ope_id = r.ope_id
+                WHERE   r.ope_id =1  order by r.doa_nombre
+2021-05-02 00:30:11|admin|select * from compromiso_estado where 1 order by ces_id
+2021-05-02 00:30:11|admin|select ope_sigla as valor from operador where ope_id = 1
+2021-05-02 00:30:11|admin|SELECT DISTINCT c.com_id, c.com_actividad, dti_nombre,dot_nombre,dos_nombre,doc_archivo,
+                        d.doc_version, c.com_fecha_limite,
+                        c.com_fecha_entrega, te.ces_nombre, c.com_observaciones
+                        FROM compromiso c
+						INNER JOIN documento d ON d.doc_id=c.doc_id
+						inner join documento_tipo td on d.dti_id = td.dti_id
+						inner join documento_tema tm on d.dot_id = tm.dot_id
+						INNER JOIN documento_subtema dos ON d.dos_id=dos.dos_id
+						INNER JOIN compromiso_estado te ON te.ces_id = c.ces_id
+						LEFT  JOIN compromiso_responsable cr ON cr.com_id = c.com_id
+						LEFT  JOIN documento_actor da ON da.doa_id = cr.doa_id
+                        WHERE    ORDER  BY  c.com_fecha_limite|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER  BY  c.com_fecha_limite' at line 12
+2021-05-02 00:30:37|admin|select * from opcion
+2021-05-02 00:30:37|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:30:37|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:30:37|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:30:37|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:30:37|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:30:37|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:30:37|admin|select opn_id as valor from opcion where opc_variable = 'compromisos'
+2021-05-02 00:30:37|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'compromisos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:30:37|admin|select opn_id as valor from opcion where opc_variable = 'compromisos'
+2021-05-02 00:30:37|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'compromisos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:30:37|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:30:37|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'compromisos'
+2021-05-02 00:30:37|admin|select * from documento_subtema where dot_id = 5 order by dos_nombre
+2021-05-02 00:30:37|admin|SELECT *
+                        FROM   documento d INNER JOIN
+                               documento_tipo AS tipo ON d.dti_id = tipo.dti_id INNER JOIN
+                               documento_subtema 	ds on ds.dos_id=d.dos_id
+                        WHERE   d.dos_id = 83 AND d.ope_id = 1 ORDER BY d.dos_id, d.doc_version
+2021-05-02 00:30:37|admin|SELECT  r.*
+		FROM  documento_actor r INNER JOIN
+		      operador p ON p.ope_id = r.ope_id
+                WHERE   r.ope_id =1  order by r.doa_nombre
+2021-05-02 00:30:37|admin|select * from compromiso_estado where 1 order by ces_id
+2021-05-02 00:30:37|admin|select ope_sigla as valor from operador where ope_id = 1
+2021-05-02 00:30:37|admin|SELECT DISTINCT c.com_id, c.com_actividad, dti_nombre,dot_nombre,dos_nombre,doc_archivo,
+                        d.doc_version, c.com_fecha_limite,
+                        c.com_fecha_entrega, te.ces_nombre, c.com_observaciones
+                        FROM compromiso c
+						INNER JOIN documento d ON d.doc_id=c.doc_id
+						inner join documento_tipo td on d.dti_id = td.dti_id
+						inner join documento_tema tm on d.dot_id = tm.dot_id
+						INNER JOIN documento_subtema dos ON d.dos_id=dos.dos_id
+						INNER JOIN compromiso_estado te ON te.ces_id = c.ces_id
+						LEFT  JOIN compromiso_responsable cr ON cr.com_id = c.com_id
+						LEFT  JOIN documento_actor da ON da.doa_id = cr.doa_id
+                        WHERE    d.dos_id = 83 and d.ope_id = 1 ORDER  BY  c.com_fecha_limite
+2021-05-02 00:30:37|admin|SELECT doa_nombre
+						FROM documento_actor r  INNER JOIN
+							 compromiso_responsable cr on r.doa_id=cr.doa_id INNER JOIN
+							 compromiso c on cr.com_id=c.com_id
+						WHERE cr.com_id=1 order by doa_nombre
+2021-05-02 00:30:47|admin|select * from opcion
+2021-05-02 00:30:47|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:30:47|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:30:47|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:30:47|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:30:47|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:30:47|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:30:47|admin|select opn_id as valor from opcion where opc_variable = 'comunicados'
+2021-05-02 00:30:47|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'comunicados' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:30:47|admin|select opn_id as valor from opcion where opc_variable = 'comunicados'
+2021-05-02 00:30:47|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'comunicados' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:30:47|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:30:47|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'comunicados'
+2021-05-02 00:30:47|admin|select per_id as valor from usuario u where u.usu_id = 1
+2021-05-02 00:30:47|admin|select deq_controla_alarmas as valor from documento_equipo where usu_id = 1
+2021-05-02 00:30:47|admin|select count(1) as valor from documento_comunicado d where d.doc_alarma = 1
+2021-05-02 00:30:47|admin|select * from documento_subtema where dot_id = 4 order by dos_nombre
+2021-05-02 00:30:47|admin|select * from documento_actor where ope_id=1 and dta_id <> 5 order by doa_nombre
+2021-05-02 00:30:47|admin|select * from documento_actor where  ope_id=1 and dta_id <> 5 order by doa_nombre
+2021-05-02 00:30:47|admin|select ope_sigla as valor from operador where ope_id = 1
+2021-05-02 00:30:49|admin|select * from opcion
+2021-05-02 00:30:49|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:30:49|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:30:49|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:30:49|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:30:49|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:30:49|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:30:49|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:30:49|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:30:49|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:30:49|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:30:49|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:30:49|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'documentos'
+2021-05-02 00:30:49|admin|select * from documento_tipo where 1 and dti_id < 99 order by dti_nombre
+2021-05-02 00:30:49|admin|select * from documento_estado where doe_id > 0 and 1 order by doe_id
+2021-05-02 00:30:49|admin|select ope_sigla as valor from operador where ope_id = 1
+2021-05-02 00:30:55|admin|select * from opcion
+2021-05-02 00:30:55|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:30:55|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:30:55|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:30:55|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:30:55|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:30:55|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:30:55|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:30:55|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:30:55|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:30:55|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:30:55|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:30:55|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'documentos'
+2021-05-02 00:30:55|admin|select * from documento_tipo where 1 and dti_id < 99 order by dti_nombre
+2021-05-02 00:30:55|admin|select * from documento_tema where dot_id <> 4 and dti_id = 2 order by dot_nombre
+2021-05-02 00:30:55|admin|select * from documento_estado where doe_id > 0 and 1 order by doe_id
+2021-05-02 00:30:55|admin|select ope_sigla as valor from operador where ope_id = 1
+2021-05-02 00:30:55|admin|select d.doc_id, d.dti_id,
+					   d.dot_id, d.dos_id, d.doc_fecha,
+					   d.doc_descripcion, d.doc_archivo,
+					   d.doc_version,td.dti_nombre,
+					   tm.dot_nombre, sd.dos_nombre, ted.doe_nombre
+				from documento d
+				inner join documento_tipo td on d.dti_id = td.dti_id
+				inner join documento_tema tm on d.dot_id = tm.dot_id
+				inner join documento_subtema sd on d.dos_id = sd.dos_id
+				inner join documento_estado ted on ted.doe_id = d.doe_id
+				where  d.dti_id = 2 and d.ope_id=1
+				order by doc_fecha
+2021-05-02 00:35:19|admin|select * from opcion
+2021-05-02 00:35:19|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:35:19|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:35:19|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:35:19|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:35:19|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:35:19|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:35:19|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:35:19|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:35:19|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:35:19|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:35:19|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:35:19|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'documentos&task=add'
+2021-05-02 00:35:19|admin|select * from documento_tipo where 1 order by dti_nombre
+2021-05-02 00:35:19|admin|select * from documento_tema where dot_id <> 4 and dti_id =  order by dot_nombre|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by dot_nombre' at line 1
+2021-05-02 00:35:19|admin|select * from documento_subtema where dot_id =  order by dos_nombre|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by dos_nombre' at line 1
+2021-05-02 00:35:19|admin|select * from documento_estado where doe_id > 0 and 1 order by doe_id
+2021-05-02 00:35:28|admin|select * from opcion
+2021-05-02 00:35:28|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:35:28|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:35:28|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:35:28|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:35:28|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:35:28|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:35:28|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:35:28|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:35:28|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:35:28|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:35:28|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:35:28|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'documentos&task=add'
+2021-05-02 00:35:28|admin|select * from documento_tipo where 1 order by dti_nombre
+2021-05-02 00:35:28|admin|select * from documento_tema where dot_id <> 4 and dti_id = 1 order by dot_nombre
+2021-05-02 00:35:28|admin|select * from documento_subtema where dot_id = -1 order by dos_nombre
+2021-05-02 00:35:28|admin|select * from documento_estado where doe_id > 0 and 1 order by doe_id
+2021-05-02 00:35:41|admin|select * from opcion
+2021-05-02 00:35:41|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:35:41|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:35:41|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:35:41|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:35:41|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:35:41|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:35:41|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:35:41|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:35:41|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:35:41|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:35:41|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:35:41|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'documentos&task=add'
+2021-05-02 00:35:41|admin|select * from documento_tipo where 1 order by dti_nombre
+2021-05-02 00:35:41|admin|select * from documento_tema where dot_id <> 4 and dti_id = 1 order by dot_nombre
+2021-05-02 00:35:41|admin|select * from documento_subtema where dot_id = 17 order by dos_nombre
+2021-05-02 00:35:41|admin|select * from documento_estado where doe_id > 0 and 1 order by doe_id
+2021-05-02 00:35:46|admin|select * from opcion
+2021-05-02 00:35:46|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:35:46|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:35:46|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:35:46|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:35:46|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:35:46|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:35:46|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:35:46|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:35:46|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:35:46|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:35:46|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:35:46|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'documentos&task=add'
+2021-05-02 00:35:46|admin|select * from documento_tipo where 1 order by dti_nombre
+2021-05-02 00:35:46|admin|select * from documento_tema where dot_id <> 4 and dti_id = 1 order by dot_nombre
+2021-05-02 00:35:46|admin|select * from documento_subtema where dot_id = 17 order by dos_nombre
+2021-05-02 00:35:46|admin|select * from documento_estado where doe_id > 0 and 1 order by doe_id
+2021-05-02 00:35:50|admin|select * from opcion
+2021-05-02 00:35:50|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:35:50|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:35:50|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:35:50|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:35:50|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:35:50|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:35:50|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:35:50|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:35:50|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:35:50|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:35:50|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:35:50|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'documentos&task=add'
+2021-05-02 00:35:50|admin|select * from documento_tipo where 1 order by dti_nombre
+2021-05-02 00:35:50|admin|select * from documento_tema where dot_id <> 4 and dti_id = 1 order by dot_nombre
+2021-05-02 00:35:50|admin|select * from documento_subtema where dot_id = 17 order by dos_nombre
+2021-05-02 00:35:50|admin|select * from documento_estado where doe_id > 0 and 1 order by doe_id
+2021-05-02 00:36:06|admin|select * from opcion
+2021-05-02 00:36:06|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:36:06|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:36:06|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:36:06|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:36:06|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:36:06|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:36:06|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:36:06|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:36:06|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:36:06|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:36:06|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:36:06|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'documentos&task=list'
+2021-05-02 00:36:06|admin|select * from documento_tipo where 1 and dti_id < 99 order by dti_nombre
+2021-05-02 00:36:06|admin|select * from documento_tema where dot_id <> 4 and dti_id = 2 order by dot_nombre
+2021-05-02 00:36:06|admin|select * from documento_subtema where dot_id =  order by dos_nombre|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by dos_nombre' at line 1
+2021-05-02 00:36:06|admin|select * from documento_estado where doe_id > 0 and 1 order by doe_id
+2021-05-02 00:36:06|admin|select ope_sigla as valor from operador where ope_id = 1
+2021-05-02 00:36:06|admin|select d.doc_id, d.dti_id,
+					   d.dot_id, d.dos_id, d.doc_fecha,
+					   d.doc_descripcion, d.doc_archivo,
+					   d.doc_version,td.dti_nombre,
+					   tm.dot_nombre, sd.dos_nombre, ted.doe_nombre
+				from documento d
+				inner join documento_tipo td on d.dti_id = td.dti_id
+				inner join documento_tema tm on d.dot_id = tm.dot_id
+				inner join documento_subtema sd on d.dos_id = sd.dos_id
+				inner join documento_estado ted on ted.doe_id = d.doe_id
+				where  d.dti_id = 2 and d.ope_id=1
+				order by doc_fecha
+2021-05-02 00:36:11|admin|select * from opcion
+2021-05-02 00:36:11|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:36:11|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:36:11|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:36:11|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:36:11|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:36:11|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:36:11|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:36:11|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:36:11|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:36:11|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:36:11|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:36:11|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'documentos&task=list'
+2021-05-02 00:36:11|admin|select * from documento_tipo where 1 and dti_id < 99 order by dti_nombre
+2021-05-02 00:36:11|admin|select * from documento_tema where dot_id <> 4 and dti_id = 1 order by dot_nombre
+2021-05-02 00:36:11|admin|select * from documento_subtema where dot_id = -1 order by dos_nombre
+2021-05-02 00:36:11|admin|select * from documento_estado where doe_id > 0 and 1 order by doe_id
+2021-05-02 00:36:11|admin|select ope_sigla as valor from operador where ope_id = 1
+2021-05-02 00:36:11|admin|select d.doc_id, d.dti_id,
+					   d.dot_id, d.dos_id, d.doc_fecha,
+					   d.doc_descripcion, d.doc_archivo,
+					   d.doc_version,td.dti_nombre,
+					   tm.dot_nombre, sd.dos_nombre, ted.doe_nombre
+				from documento d
+				inner join documento_tipo td on d.dti_id = td.dti_id
+				inner join documento_tema tm on d.dot_id = tm.dot_id
+				inner join documento_subtema sd on d.dos_id = sd.dos_id
+				inner join documento_estado ted on ted.doe_id = d.doe_id
+				where  d.dti_id = 1 and d.ope_id=1
+				order by doc_fecha
+2021-05-02 00:36:18|admin|select * from opcion
+2021-05-02 00:36:18|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:36:18|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:36:18|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:36:18|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:36:18|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:36:18|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:36:18|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:36:18|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:36:18|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:36:18|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:36:18|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:36:18|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'documentos&task=list'
+2021-05-02 00:36:18|admin|select * from documento_tipo where 1 and dti_id < 99 order by dti_nombre
+2021-05-02 00:36:18|admin|select * from documento_tema where dot_id <> 4 and dti_id = 1 order by dot_nombre
+2021-05-02 00:36:18|admin|select * from documento_subtema where dot_id = 17 order by dos_nombre
+2021-05-02 00:36:18|admin|select * from documento_estado where doe_id > 0 and 1 order by doe_id
+2021-05-02 00:36:18|admin|select ope_sigla as valor from operador where ope_id = 1
+2021-05-02 00:36:18|admin|select d.doc_id, d.dti_id,
+					   d.dot_id, d.dos_id, d.doc_fecha,
+					   d.doc_descripcion, d.doc_archivo,
+					   d.doc_version,td.dti_nombre,
+					   tm.dot_nombre, sd.dos_nombre, ted.doe_nombre
+				from documento d
+				inner join documento_tipo td on d.dti_id = td.dti_id
+				inner join documento_tema tm on d.dot_id = tm.dot_id
+				inner join documento_subtema sd on d.dos_id = sd.dos_id
+				inner join documento_estado ted on ted.doe_id = d.doe_id
+				where  d.dti_id = 1 and d.dot_id = 17 and d.ope_id=1
+				order by doc_fecha
+2021-05-02 00:36:20|admin|select * from opcion
+2021-05-02 00:36:20|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:36:20|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:36:20|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:36:20|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:36:20|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:36:20|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:36:20|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:36:20|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:36:20|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:36:20|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:36:20|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:36:20|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'documentos&task=list'
+2021-05-02 00:36:20|admin|select * from documento_tipo where 1 and dti_id < 99 order by dti_nombre
+2021-05-02 00:36:20|admin|select * from documento_tema where dot_id <> 4 and dti_id = 1 order by dot_nombre
+2021-05-02 00:36:20|admin|select * from documento_subtema where dot_id = 17 order by dos_nombre
+2021-05-02 00:36:20|admin|select * from documento_estado where doe_id > 0 and 1 order by doe_id
+2021-05-02 00:36:20|admin|select ope_sigla as valor from operador where ope_id = 1
+2021-05-02 00:36:20|admin|select d.doc_id, d.dti_id,
+					   d.dot_id, d.dos_id, d.doc_fecha,
+					   d.doc_descripcion, d.doc_archivo,
+					   d.doc_version,td.dti_nombre,
+					   tm.dot_nombre, sd.dos_nombre, ted.doe_nombre
+				from documento d
+				inner join documento_tipo td on d.dti_id = td.dti_id
+				inner join documento_tema tm on d.dot_id = tm.dot_id
+				inner join documento_subtema sd on d.dos_id = sd.dos_id
+				inner join documento_estado ted on ted.doe_id = d.doe_id
+				where  d.dti_id = 1 and d.dot_id = 17 and d.dos_id = 54 and d.ope_id=1
+				order by doc_fecha
+2021-05-02 00:36:28|admin|select * from opcion
+2021-05-02 00:36:28|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:36:28|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:36:28|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:36:28|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:36:28|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:36:28|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:36:28|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:36:28|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:36:28|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:36:28|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:36:28|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:36:28|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'documentos&task=list'
+2021-05-02 00:36:28|admin|select * from documento_tipo where 1 and dti_id < 99 order by dti_nombre
+2021-05-02 00:36:28|admin|select * from documento_tema where dot_id <> 4 and dti_id = 1 order by dot_nombre
+2021-05-02 00:36:28|admin|select * from documento_subtema where dot_id = 17 order by dos_nombre
+2021-05-02 00:36:28|admin|select * from documento_estado where doe_id > 0 and 1 order by doe_id
+2021-05-02 00:36:28|admin|select ope_sigla as valor from operador where ope_id = 1
+2021-05-02 00:36:28|admin|select d.doc_id, d.dti_id,
+					   d.dot_id, d.dos_id, d.doc_fecha,
+					   d.doc_descripcion, d.doc_archivo,
+					   d.doc_version,td.dti_nombre,
+					   tm.dot_nombre, sd.dos_nombre, ted.doe_nombre
+				from documento d
+				inner join documento_tipo td on d.dti_id = td.dti_id
+				inner join documento_tema tm on d.dot_id = tm.dot_id
+				inner join documento_subtema sd on d.dos_id = sd.dos_id
+				inner join documento_estado ted on ted.doe_id = d.doe_id
+				where  d.dti_id = 1 and d.dot_id = 17 and d.dos_id = 54 and d.doe_id = 12 and d.ope_id=1
+				order by doc_fecha
+2021-05-02 00:36:30|admin|select * from opcion
+2021-05-02 00:36:30|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:36:30|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:36:30|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:36:30|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:36:30|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:36:30|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:36:30|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:36:30|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:36:30|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:36:30|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:36:30|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:36:30|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'documentos&task=list'
+2021-05-02 00:36:30|admin|select * from documento_tipo where 1 and dti_id < 99 order by dti_nombre
+2021-05-02 00:36:30|admin|select * from documento_tema where dot_id <> 4 and dti_id = 1 order by dot_nombre
+2021-05-02 00:36:30|admin|select * from documento_subtema where dot_id = 17 order by dos_nombre
+2021-05-02 00:36:30|admin|select * from documento_estado where doe_id > 0 and 1 order by doe_id
+2021-05-02 00:36:30|admin|select ope_sigla as valor from operador where ope_id = 1
+2021-05-02 00:36:30|admin|select d.doc_id, d.dti_id,
+					   d.dot_id, d.dos_id, d.doc_fecha,
+					   d.doc_descripcion, d.doc_archivo,
+					   d.doc_version,td.dti_nombre,
+					   tm.dot_nombre, sd.dos_nombre, ted.doe_nombre
+				from documento d
+				inner join documento_tipo td on d.dti_id = td.dti_id
+				inner join documento_tema tm on d.dot_id = tm.dot_id
+				inner join documento_subtema sd on d.dos_id = sd.dos_id
+				inner join documento_estado ted on ted.doe_id = d.doe_id
+				where  d.dti_id = 1 and d.dot_id = 17 and d.dos_id = 54 and d.doe_id = 1 and d.ope_id=1
+				order by doc_fecha
+2021-05-02 00:36:33|admin|select * from opcion
+2021-05-02 00:36:33|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:36:33|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:36:33|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:36:33|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:36:33|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:36:33|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:36:33|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:36:33|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:36:33|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:36:33|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:36:33|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:36:33|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'documentos&task=list'
+2021-05-02 00:36:33|admin|select * from documento_tipo where 1 and dti_id < 99 order by dti_nombre
+2021-05-02 00:36:33|admin|select * from documento_tema where dot_id <> 4 and dti_id = 1 order by dot_nombre
+2021-05-02 00:36:33|admin|select * from documento_subtema where dot_id = 17 order by dos_nombre
+2021-05-02 00:36:33|admin|select * from documento_estado where doe_id > 0 and 1 order by doe_id
+2021-05-02 00:36:33|admin|select ope_sigla as valor from operador where ope_id = 1
+2021-05-02 00:36:33|admin|select d.doc_id, d.dti_id,
+					   d.dot_id, d.dos_id, d.doc_fecha,
+					   d.doc_descripcion, d.doc_archivo,
+					   d.doc_version,td.dti_nombre,
+					   tm.dot_nombre, sd.dos_nombre, ted.doe_nombre
+				from documento d
+				inner join documento_tipo td on d.dti_id = td.dti_id
+				inner join documento_tema tm on d.dot_id = tm.dot_id
+				inner join documento_subtema sd on d.dos_id = sd.dos_id
+				inner join documento_estado ted on ted.doe_id = d.doe_id
+				where  d.dti_id = 1 and d.dot_id = 17 and d.dos_id = 54 and d.doe_id = 5 and d.ope_id=1
+				order by doc_fecha
+2021-05-02 00:36:43|admin|select * from opcion
+2021-05-02 00:36:43|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:36:43|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:36:43|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:36:43|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:36:43|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:36:43|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:36:43|admin|select opn_id as valor from opcion where opc_variable = 'tablas'
+2021-05-02 00:36:43|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'tablas' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:36:43|admin|select opn_id as valor from opcion where opc_variable = 'tablas'
+2021-05-02 00:36:43|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'tablas' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:36:43|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:36:43|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'tablas'
+2021-05-02 00:36:54|admin|select * from opcion
+2021-05-02 00:36:54|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:36:54|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:36:54|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:36:54|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:36:54|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:36:54|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:36:54|admin|select opn_id as valor from opcion where opc_variable = 'tablas'
+2021-05-02 00:36:54|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'tablas' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:36:54|admin|select opn_id as valor from opcion where opc_variable = 'tablas'
+2021-05-02 00:36:54|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'tablas' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:36:54|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:36:54|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'tablas'
+2021-05-02 00:36:54|admin|show fields from documento_tema
+2021-05-02 00:36:54|admin|select dot_id,dot_nombre,documento_tipo.dti_nombre from documento_tema inner join documento_tipo on documento_tema.dti_id = documento_tipo.dti_id where 1
+2021-05-02 00:37:23|admin|select * from opcion
+2021-05-02 00:37:23|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:37:23|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:37:23|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:37:23|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:37:23|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:37:23|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:37:23|admin|select opn_id as valor from opcion where opc_variable = 'tablas'
+2021-05-02 00:37:23|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'tablas' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:37:23|admin|select opn_id as valor from opcion where opc_variable = 'tablas'
+2021-05-02 00:37:23|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'tablas' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:37:23|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:37:23|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'tablas'
+2021-05-02 00:37:23|admin|show fields from documento_tipo
+2021-05-02 00:37:23|admin|select dti_id,dti_nombre,dti_estado,dti_responsable from documento_tipo where 1
+2021-05-02 00:37:47|admin|select * from opcion
+2021-05-02 00:37:47|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:37:47|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:37:47|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:37:47|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:37:47|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:37:47|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:37:47|admin|select opn_id as valor from opcion where opc_variable = 'tablas'
+2021-05-02 00:37:47|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'tablas' and opn_id=1 and ope_id =)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+                                    and o.opn_id in(2)
+                  ...' at line 6
+2021-05-02 00:37:47|admin|select opn_id as valor from opcion where opc_variable = 'tablas'
+2021-05-02 00:37:47|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'tablas' and opn_id=1 and ope_id =)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+                                    and o.opn_id in(2)
+                  ...' at line 6
+2021-05-02 00:37:47|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:37:47|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'tablas&task=add'
+2021-05-02 00:37:47|admin|show fields from documento_tipo
+2021-05-02 00:37:47|admin|select dti_id,dti_nombre,dti_estado,dti_responsable from documento_tipo where dti_id = |You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+2021-05-02 00:37:47|admin|select * from documento_tipo limit 0,1
+2021-05-02 00:38:18|admin|select * from opcion
+2021-05-02 00:38:18|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:38:18|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:38:18|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:38:18|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:38:18|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:38:18|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:38:18|admin|select opn_id as valor from opcion where opc_variable = 'tablas'
+2021-05-02 00:38:18|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'tablas' and opn_id=1 and ope_id =)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+                                    and o.opn_id in(2)
+                  ...' at line 6
+2021-05-02 00:38:18|admin|select opn_id as valor from opcion where opc_variable = 'tablas'
+2021-05-02 00:38:18|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'tablas' and opn_id=1 and ope_id =)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+                                    and o.opn_id in(2)
+                  ...' at line 6
+2021-05-02 00:38:18|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:38:18|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'tablas&task=saveAdd'
+2021-05-02 00:38:18|admin|show fields from documento_tipo
+2021-05-02 00:38:18|admin|select dti_id,dti_nombre,dti_estado,dti_responsable from documento_tipo where dti_id = |You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+2021-05-02 00:38:18|admin|select * from documento_tipo limit 0,1
+2021-05-02 00:38:18|admin|insert into `documento_tipo`(dti_nombre,dti_estado,dti_responsable)values('soporte solicitudes estudiantes','S','S')
+2021-05-02 00:38:20|admin|select * from opcion
+2021-05-02 00:38:20|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:38:20|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:38:20|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:38:20|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:38:20|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:38:20|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:38:20|admin|select opn_id as valor from opcion where opc_variable = 'tablas'
+2021-05-02 00:38:20|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'tablas' and opn_id=1 and ope_id =)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+                                    and o.opn_id in(2)
+                  ...' at line 6
+2021-05-02 00:38:20|admin|select opn_id as valor from opcion where opc_variable = 'tablas'
+2021-05-02 00:38:20|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'tablas' and opn_id=1 and ope_id =)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+                                    and o.opn_id in(2)
+                  ...' at line 6
+2021-05-02 00:38:20|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:38:20|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'tablas'
+2021-05-02 00:38:20|admin|show fields from documento_tipo
+2021-05-02 00:38:20|admin|select dti_id,dti_nombre,dti_estado,dti_responsable from documento_tipo where 1
+2021-05-02 00:38:25|admin|select * from opcion
+2021-05-02 00:38:25|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:38:25|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:38:25|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:38:25|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:38:25|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:38:25|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:38:25|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2021-05-02 00:38:25|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:38:25|admin|select opn_id as valor from opcion where opc_variable = 'home'
+2021-05-02 00:38:25|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'home' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:38:25|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:38:25|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'home'
+2021-05-02 00:38:25|admin|update usuario set usu_fecha_ultimo_ingreso = '2021-05-02' where usu_id = 1
+2021-05-02 00:41:07|admin|select * from opcion
+2021-05-02 00:41:07|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:41:07|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:41:07|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:41:07|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:41:07|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:41:07|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:41:07|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:41:07|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:41:07|admin|select opn_id as valor from opcion where opc_variable = 'documentos'
+2021-05-02 00:41:07|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'documentos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:41:07|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:41:07|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'documentos'
+2021-05-02 00:41:07|admin|select * from documento_tipo where 1 and dti_id < 99 order by dti_nombre
+2021-05-02 00:41:07|admin|select * from documento_estado where doe_id > 0 and 1 order by doe_id
+2021-05-02 00:41:07|admin|select ope_sigla as valor from operador where ope_id = 1
+2021-05-02 00:41:12|admin|select * from opcion
+2021-05-02 00:41:12|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:41:12|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:41:12|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:41:12|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:41:12|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:41:12|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:41:12|admin|select opn_id as valor from opcion where opc_variable = 'compromisos'
+2021-05-02 00:41:12|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'compromisos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:41:12|admin|select opn_id as valor from opcion where opc_variable = 'compromisos'
+2021-05-02 00:41:12|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'compromisos' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:41:12|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:41:12|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'compromisos'
+2021-05-02 00:41:12|admin|select * from documento_subtema where dot_id = 5 order by dos_nombre
+2021-05-02 00:41:12|admin|SELECT *
+                        FROM   documento d INNER JOIN
+                               documento_tipo AS tipo ON d.dti_id = tipo.dti_id INNER JOIN
+                               documento_subtema 	ds on ds.dos_id=d.dos_id
+                        WHERE   d.dos_id =  AND d.ope_id = 1 ORDER BY d.dos_id, d.doc_version|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND d.ope_id = 1 ORDER BY d.dos_id, d.doc_version' at line 5
+2021-05-02 00:41:12|admin|SELECT  r.*
+		FROM  documento_actor r INNER JOIN
+		      operador p ON p.ope_id = r.ope_id
+                WHERE   r.ope_id =1  order by r.doa_nombre
+2021-05-02 00:41:12|admin|select * from compromiso_estado where 1 order by ces_id
+2021-05-02 00:41:12|admin|select ope_sigla as valor from operador where ope_id = 1
+2021-05-02 00:41:12|admin|SELECT DISTINCT c.com_id, c.com_actividad, dti_nombre,dot_nombre,dos_nombre,doc_archivo,
+                        d.doc_version, c.com_fecha_limite,
+                        c.com_fecha_entrega, te.ces_nombre, c.com_observaciones
+                        FROM compromiso c
+						INNER JOIN documento d ON d.doc_id=c.doc_id
+						inner join documento_tipo td on d.dti_id = td.dti_id
+						inner join documento_tema tm on d.dot_id = tm.dot_id
+						INNER JOIN documento_subtema dos ON d.dos_id=dos.dos_id
+						INNER JOIN compromiso_estado te ON te.ces_id = c.ces_id
+						LEFT  JOIN compromiso_responsable cr ON cr.com_id = c.com_id
+						LEFT  JOIN documento_actor da ON da.doa_id = cr.doa_id
+                        WHERE    ORDER  BY  c.com_fecha_limite|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER  BY  c.com_fecha_limite' at line 12
+2021-05-02 00:41:15|admin|select * from opcion
+2021-05-02 00:41:15|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:41:15|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:41:15|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:41:15|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:41:15|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:41:15|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:41:15|admin|select opn_id as valor from opcion where opc_variable = 'actividades'
+2021-05-02 00:41:15|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'actividades' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:41:15|admin|select opn_id as valor from opcion where opc_variable = 'actividades'
+2021-05-02 00:41:15|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'actividades' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:41:15|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:41:15|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'actividades'
+2021-05-02 00:41:15|admin|select per_id as valor from usuario u where u.usu_id = 1
+2021-05-02 00:41:15|admin|select *
+				FROM  actividad_estado
+				where 1 order by ace_nombre
+2021-05-02 00:41:15|admin|select *
+				FROM  actividad_subsistema
+				where 1 order by acs_nombre
+2021-05-02 00:41:15|admin|select *
+				from actividad act
+				inner join actividad_estado ace on act.ace_id=ace.ace_id
+				inner join actividad_subsistema acs on act.acs_id=acs.acs_id
+        inner join usuario usu on act.usu_id=usu.usu_id
+				where  order by  act.act_descripcion|You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by  act.act_descripcion' at line 6
+2021-05-02 00:41:34|admin|select * from opcion
+2021-05-02 00:41:34|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:41:34|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:41:34|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:41:34|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:41:34|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:41:34|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:41:34|admin|select opn_id as valor from opcion where opc_variable = 'actividades'
+2021-05-02 00:41:34|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'actividades' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:41:34|admin|select opn_id as valor from opcion where opc_variable = 'actividades'
+2021-05-02 00:41:34|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'actividades' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:41:34|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:41:34|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'actividades'
+2021-05-02 00:41:34|admin|select per_id as valor from usuario u where u.usu_id = 1
+2021-05-02 00:41:34|admin|select *
+				FROM  actividad_estado
+				where 1 order by ace_nombre
+2021-05-02 00:41:34|admin|select *
+				FROM  actividad_subsistema
+				where 1 order by acs_nombre
+2021-05-02 00:41:34|admin|select *
+				from actividad act
+				inner join actividad_estado ace on act.ace_id=ace.ace_id
+				inner join actividad_subsistema acs on act.acs_id=acs.acs_id
+        inner join usuario usu on act.usu_id=usu.usu_id
+				where  ace.ace_id = 4 order by  act.act_descripcion
+2021-05-02 00:41:40|admin|select * from opcion
+2021-05-02 00:41:40|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:41:40|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:41:40|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:41:40|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:41:40|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:41:40|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:41:40|admin|select opn_id as valor from opcion where opc_variable = 'actividades'
+2021-05-02 00:41:40|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'actividades' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:41:40|admin|select opn_id as valor from opcion where opc_variable = 'actividades'
+2021-05-02 00:41:40|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'actividades' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:41:40|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:41:40|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'actividades'
+2021-05-02 00:41:40|admin|select per_id as valor from usuario u where u.usu_id = 1
+2021-05-02 00:41:40|admin|select *
+				FROM  actividad_estado
+				where 1 order by ace_nombre
+2021-05-02 00:41:40|admin|select *
+				FROM  actividad_subsistema
+				where 1 order by acs_nombre
+2021-05-02 00:41:40|admin|select *
+				from actividad act
+				inner join actividad_estado ace on act.ace_id=ace.ace_id
+				inner join actividad_subsistema acs on act.acs_id=acs.acs_id
+        inner join usuario usu on act.usu_id=usu.usu_id
+				where  ace.ace_id = 4 and acs.acs_id = 4 order by  act.act_descripcion
+2021-05-02 00:41:44|admin|select * from opcion
+2021-05-02 00:41:44|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:41:44|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:41:44|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:41:44|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:41:44|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:41:44|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:41:44|admin|select opn_id as valor from opcion where opc_variable = 'actividades'
+2021-05-02 00:41:44|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'actividades' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:41:44|admin|select opn_id as valor from opcion where opc_variable = 'actividades'
+2021-05-02 00:41:44|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'actividades' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:41:44|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:41:44|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'actividades'
+2021-05-02 00:41:44|admin|select per_id as valor from usuario u where u.usu_id = 1
+2021-05-02 00:41:44|admin|select *
+				FROM  actividad_estado
+				where 1 order by ace_nombre
+2021-05-02 00:41:44|admin|select *
+				FROM  actividad_subsistema
+				where 1 order by acs_nombre
+2021-05-02 00:41:44|admin|select *
+				from actividad act
+				inner join actividad_estado ace on act.ace_id=ace.ace_id
+				inner join actividad_subsistema acs on act.acs_id=acs.acs_id
+        inner join usuario usu on act.usu_id=usu.usu_id
+				where  ace.ace_id = 4 and acs.acs_id = 8 order by  act.act_descripcion
+2021-05-02 00:41:49|admin|select * from opcion
+2021-05-02 00:41:49|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:41:50|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:41:50|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:41:50|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:41:50|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:41:50|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:41:50|admin|select opn_id as valor from opcion where opc_variable = 'actividades'
+2021-05-02 00:41:50|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'actividades' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:41:50|admin|select opn_id as valor from opcion where opc_variable = 'actividades'
+2021-05-02 00:41:50|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'actividades' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:41:50|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:41:50|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'actividades'
+2021-05-02 00:41:50|admin|select per_id as valor from usuario u where u.usu_id = 1
+2021-05-02 00:41:50|admin|select *
+				FROM  actividad_estado
+				where 1 order by ace_nombre
+2021-05-02 00:41:50|admin|select *
+				FROM  actividad_subsistema
+				where 1 order by acs_nombre
+2021-05-02 00:41:50|admin|select *
+				from actividad act
+				inner join actividad_estado ace on act.ace_id=ace.ace_id
+				inner join actividad_subsistema acs on act.acs_id=acs.acs_id
+        inner join usuario usu on act.usu_id=usu.usu_id
+				where  ace.ace_id = 1 and acs.acs_id = 8 order by  act.act_descripcion
+2021-05-02 00:41:53|admin|select * from opcion
+2021-05-02 00:41:53|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:41:53|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:41:53|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:41:53|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:41:53|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:41:53|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:41:53|admin|select opn_id as valor from opcion where opc_variable = 'actividades'
+2021-05-02 00:41:53|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'actividades' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:41:53|admin|select opn_id as valor from opcion where opc_variable = 'actividades'
+2021-05-02 00:41:53|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'actividades' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:41:53|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:41:53|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'actividades'
+2021-05-02 00:41:53|admin|select per_id as valor from usuario u where u.usu_id = 1
+2021-05-02 00:41:53|admin|select *
+				FROM  actividad_estado
+				where 1 order by ace_nombre
+2021-05-02 00:41:53|admin|select *
+				FROM  actividad_subsistema
+				where 1 order by acs_nombre
+2021-05-02 00:41:53|admin|select *
+				from actividad act
+				inner join actividad_estado ace on act.ace_id=ace.ace_id
+				inner join actividad_subsistema acs on act.acs_id=acs.acs_id
+        inner join usuario usu on act.usu_id=usu.usu_id
+				where  ace.ace_id = 3 and acs.acs_id = 8 order by  act.act_descripcion
+2021-05-02 00:41:56|admin|select * from opcion
+2021-05-02 00:41:56|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:41:56|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:41:56|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:41:56|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:41:56|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:41:56|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:41:56|admin|select opn_id as valor from opcion where opc_variable = 'actividades'
+2021-05-02 00:41:56|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'actividades' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:41:56|admin|select opn_id as valor from opcion where opc_variable = 'actividades'
+2021-05-02 00:41:56|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'actividades' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:41:56|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:41:56|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'actividades'
+2021-05-02 00:41:56|admin|select per_id as valor from usuario u where u.usu_id = 1
+2021-05-02 00:41:56|admin|select *
+				FROM  actividad_estado
+				where 1 order by ace_nombre
+2021-05-02 00:41:56|admin|select *
+				FROM  actividad_subsistema
+				where 1 order by acs_nombre
+2021-05-02 00:41:56|admin|select *
+				from actividad act
+				inner join actividad_estado ace on act.ace_id=ace.ace_id
+				inner join actividad_subsistema acs on act.acs_id=acs.acs_id
+        inner join usuario usu on act.usu_id=usu.usu_id
+				where  ace.ace_id = 2 and acs.acs_id = 8 order by  act.act_descripcion
+2021-05-02 00:42:04|admin|select * from opcion
+2021-05-02 00:42:04|admin|select usu_id as valor from usuario where usu_login = 'admin' and usu_clave = md5('admin')
+2021-05-02 00:42:04|admin|select o.*,p.pxo_nivel
+				from opcion o
+				inner join perfil_x_opcion p on p.opc_id = o.opc_id
+				inner join usuario u on p.per_id = u.per_id
+				where u.usu_id = 1
+				and o.opn_id in(0,1)
+				order by o.opc_orden
+2021-05-02 00:42:04|admin|select max(date_in) as valor from usuario_sec where usu_id = 1
+2021-05-02 00:42:04|admin|select usu_nombre as valor from usuario where usu_id = 1
+2021-05-02 00:42:04|admin|select usu_apellido as valor from usuario where usu_id = 1
+2021-05-02 00:42:04|admin|select * from usuario_sec where usu_id= 1
+2021-05-02 00:42:04|admin|select opn_id as valor from opcion where opc_variable = 'actividades'
+2021-05-02 00:42:04|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'actividades' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:42:04|admin|select opn_id as valor from opcion where opc_variable = 'actividades'
+2021-05-02 00:42:04|admin|select o.*,p.pxo_nivel
+                                    from opcion o
+                                    inner join perfil_x_opcion p on p.opc_id = o.opc_id
+                                    inner join usuario u on p.per_id = u.per_id
+                                    where u.usu_id = 1
+                            and o.opc_padre_id = (select opc_id from opcion where opc_variable = 'actividades' and opn_id=1 and ope_id =1)
+                                    and o.opn_id in(2)
+                                    order by o.opc_orden
+2021-05-02 00:42:04|admin|select usu_fecha_ultimo_ingreso as valor from usuario where usu_id = 1
+2021-05-02 00:42:04|admin|select pxo_nivel as valor from perfil_x_opcion p
+					inner join opcion o on o.opc_id = p.opc_id
+					inner join usuario u on p.per_id = u.per_id where u.usu_id = 1 and o.opc_variable = 'actividades'
+2021-05-02 00:42:04|admin|select per_id as valor from usuario u where u.usu_id = 1
+2021-05-02 00:42:04|admin|select *
+				FROM  actividad_estado
+				where 1 order by ace_nombre
+2021-05-02 00:42:04|admin|select *
+				FROM  actividad_subsistema
+				where 1 order by acs_nombre
+2021-05-02 00:42:04|admin|select *
+				from actividad act
+				inner join actividad_estado ace on act.ace_id=ace.ace_id
+				inner join actividad_subsistema acs on act.acs_id=acs.acs_id
+        inner join usuario usu on act.usu_id=usu.usu_id
+				where  ace.ace_id = 2 order by  act.act_descripcion

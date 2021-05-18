@@ -4,7 +4,7 @@
 *
 *<ul>
 * <li> MadeOpen <madeopensoftware.com></li>
-*<li> Proyecto PNCAV</li>
+* <li> Proyecto GPC</li>
 *</ul>
 */
 
@@ -13,8 +13,8 @@
 *
 * @package  modulos
 * @author Alejandro Daza
-* @version 2019.02
-* @copyright SERTIC - MINTICS
+* @version 2020.01
+* @copyright apdaza
 */
 //no permite el acceso directo
     defined('_VALID_PRY') or die('Restricted access to this option');
@@ -24,9 +24,7 @@
 
 
 ?>
-        <h1 class="font-weight-light">Bienvenido!</h1>
        <div class="text-center">
-            <img src="templates/img/logo-poc.png" class="mw-100 mx-auto mb-3" alt=""><br>
-            <!--img src="templates/img/logo_secretaria_seguridad_color.png" class="mw-100 mx-auto mb-3" alt=""-->
-            <p class="mt-2">Programe, Organice y Controle</p>
+            <img src="templates/img/logo.png" class="mw-100 mx-auto mb-3" alt="">
+            <h1 class="font-weight-light">Bienvenido!</h1>
         </div>

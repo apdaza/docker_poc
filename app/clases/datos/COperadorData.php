@@ -16,8 +16,8 @@
  * @package  clases
  * @subpackage datos
  * @author Alejandro Daza
- * @version 2019.02
- * @copyright SERTIC - MINTICS
+ * @version 2020.01
+ * @copyright apdaza
  */
 class COperadorData {
 

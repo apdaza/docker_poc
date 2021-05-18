@@ -4,7 +4,7 @@
 *
 *<ul>
 * <li> MadeOpen <madeopensoftware.com></li>
-*<li> Proyecto kbt</li>
+*<li> Proyecto GPC</li>
 *</ul>
 */
 
@@ -14,7 +14,7 @@
 * @package  clases
 * @subpackage lang
 * @author Alejandro Daza
-* @version 2019.02
+* @version 2020.01
 * @copyright apdaza
 */
 	define('TABLA_COMUNICADOS','Comunicados');

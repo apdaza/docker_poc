@@ -15,7 +15,7 @@
  * @package  clases
  * @subpackage aplicacion
  * @author Alejandro Daza
- * @version 2019.02
+ * @version 2020.01
  * @copyright apdaza
  */
 class COpcion {

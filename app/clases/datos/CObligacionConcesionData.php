@@ -1,6 +1,6 @@
 <?php
 /**
-* Sistema POC
+* Sistema GPC
 *
 *<ul>
 * <li> MadeOpen <madeopensoftware.com></li>
@@ -15,7 +15,7 @@
 * @package  clases
 * @subpackage datos
 * @author Alejandro Daza
-* @version 2019.02
+* @version 2020.01
 * @copyright apdaza
 */
 Class CObligacionConcesionData{

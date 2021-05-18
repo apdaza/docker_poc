@@ -10,7 +10,7 @@
  * Implementa el manejo del patron front controler
  *
  * @author Alejandro Daza
- * @version 2019.02
+ * @version 2020.01
  * @copyright apdaza
  */
 //session_register('usuario_sesion_pry');

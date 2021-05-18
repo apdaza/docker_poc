@@ -1,16 +1,16 @@
 <?php
 /**
- * Sistema POC
+ * Sistema GPC
  *
  * <ul>
  * <li> Madeopen (http://madeopensoftware.com)</li>
- * <li> Proyecto kbt</li>
+ * <li> Proyecto GPC</li>
  * <li> apdaza@gmail.com </li>
  * </ul>
  */
 /**
  * @author apdaza
- * @version 2019.01
+ * @version 2020.01
  * @copyright apdaza
  */
 header('Content-type: application/vnd.ms-excel');

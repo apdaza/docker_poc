@@ -1,4 +1,4 @@
-# Sistema POC
+# Sistema GPC
 - MadeOpen <madeopensoftware.com>
 - Proyecto KBT
 - Alejandro Daza

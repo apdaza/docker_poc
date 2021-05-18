@@ -4,7 +4,7 @@
 *
 *<ul>
 * <li> MadeOpen <madeopensoftware.com></li>
-*<li> Proyecto PNCAV</li>
+* <li> Proyecto GPC</li>
 *</ul>
 */
 
@@ -14,11 +14,11 @@
 * @package  clases
 * @subpackage lang
 * @author Alejandro Daza
-* @version 2019.02
-* @copyright SERTIC - MINTICS
+* @version 2020.01
+* @copyright apdaza
 */
 	//para el layout
-	define('APP_TITLE','Sistema POC');
+	define('APP_TITLE','Sistema GPC');
 	define('LAYOUT_FECHA','Fecha');
 	define('LAYOUT_HORA','Hora');
 	define('LAYOUT_ACTIVO','Usuario');

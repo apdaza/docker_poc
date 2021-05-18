@@ -19,8 +19,8 @@
  * @package  clases
  * @subpackage interfaz
  * @author Alejandro Daza
- * @version 2019.02
- * @copyright SERTIC - MINTICS
+ * @version 2020.01
+ * @copyright apdaza
  */
 class CHtmlForm {
 

@@ -18,8 +18,8 @@
  * @package  modulos
  * @subpackage documental
  * @author Alejandro Daza
- * @version 2019.02
- * @copyright SERTIC - MINTICS
+ * @version 2020.01
+ * @copyright apdaza
  */
 header('Content-type: application/vnd.ms-excel');
 header("Content-Disposition: attachment; filename=recomendaciones.xls");

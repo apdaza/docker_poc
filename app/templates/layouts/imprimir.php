@@ -14,7 +14,7 @@
 * @package  templates
 * @subpackage layouts
 * @author Alejandro Daza
-* @version 2019.02
+* @version 2020.01
 * @copyright apdaza
 */
 //no permite el acceso directo

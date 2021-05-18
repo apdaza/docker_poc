@@ -4,7 +4,7 @@
 *
 *<ul>
 * <li> MadeOpen <madeopensoftware.com></li>
-*<li> Proyecto PNCAV</li>
+* <li> Proyecto GPC</li>
 *</ul>
 */
 
@@ -18,8 +18,8 @@
 * @package  modulos
 * @subpackage perfiles
 * @author Alejandro Daza
-* @version 2019.02
-* @copyright SERTIC - MINTICS
+* @version 2020.01
+* @copyright apdaza
 */
 
 	//no permite el acceso directo

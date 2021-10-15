@@ -115,10 +115,11 @@ $html->abrirHtml();
         <!-- sidebar left -->
         <div class="sidebar sidebar-left">
             <ul class="nav flex-column">
-			<li class="nav-item">
+			<!-- <li class="nav-item"> -->
 			<?php
                 $cont = 0;
-                while ($row = mysqli_fetch_array($opciones)) {
+                
+                while ($row = mysqli_fetch_array($opciones)) {                
                     if ($row["opc_variable"] != "_blank") {
                         if ($row["opn_id"] == 0) {
                             if ($cont == 1) {
@@ -129,19 +130,21 @@ $html->abrirHtml();
                             . "<a href='#' class='nav-link dropdwown-toggle' "
                             . "data-toggle='dropdown' ><i class='material-icons icon'>settings</i><span>" .
                             $html->traducirTildes($row["opc_nombre"]) .
-                            "</span><i class='material-icons icon arrow'>expand_more</i></a>";
+                            "</span>\n  <i class='material-icons icon arrow'>expand_more</i></a>\n";
                         }
                         if ($row["opn_id"] == 1) {
+                            
                             if ($cont == 0) {
-                                echo "<ul class='nav flex-column'>";
+                                echo "\n<ul class='nav flex-column'>";
                                 $cont++;
                             }
+                            
                             echo "<li class='nav-item'><a class='nav-link pink-gradient-active' href='?mod=" . $row["opc_variable"] .
                             "&niv=" . $row["pxo_nivel"] .
                             "&operador=" . $row["ope_id"] .
                             "'>" .
                             $html->traducirTildes($row["opc_nombre"])
-                            . "</a>";
+                            . "</a>\n";
                         }
                     } else {
                         if ($row["opn_id"] == 0) {

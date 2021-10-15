@@ -1,1 +1,6 @@
 /mysql/
+/app/logs/
+/app/manageFiles/credentials.json
+/app/manageFiles/token.json
+/app/manageFiles/src/credentials.json
+/app/manageFiles/src/token.json

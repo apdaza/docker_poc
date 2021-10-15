@@ -27,7 +27,9 @@ Para la obtención del token una vez descargado las credenciales se debe realiza
 1. Estar en la carpeta del repositorio y ejecutar el script getToken.sh
     ``` 
     sh getToken.sh  
+    ```
     o
+    ```
     bash getToken.sh
-      ``` 
+    ``` 
 2. Durante la ejecución nos generará una url para obtener los permisos que serán concedidos al proyecto para obtener un código que nos entrega google. El código se muestra en el módulo de archivos del sistema. Este código se debe ingresar dentro de la terminal, si todo sale correcto nos generará el **token.json**.

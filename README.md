@@ -17,13 +17,17 @@
 4. Dentro de API y Servicios crear una credencial **ID de cliente de OAuth** como se ve en la figura 
 ![](https://imgur.com/PY9xPKU.png)
 5. Seleccionar el **Tipo** que es **Aplicación Web**, también ingresar un **nombre** a la credencial.
-6. En los campos de texto **URI*** por el momento dejar el localhost http://localhost y en **URI de redireccionamiento autorizados** seleccionar la ruta dentro del servidor web la siguiente direccion. http://localhost/< ruta del contenido dentro del servidor web>/oauth2callback.php
+6. En los campos de texto **URI*** por el momento dejar el localhost http://localhost y en **URI de redireccionamiento autorizados** seleccionar la ruta dentro del servidor web la siguiente direccion. http://localhost/< ruta del contenido dentro del servidor web>/
 ![](https://imgur.com/JANXM2V.png)
 7. Guardar las credenciales y descargarlas con el nombre **credentials.json**.
 
 ## Obtención del token.json
 
 Para la obtención del token una vez descargado las credenciales se debe realizar lo siguiente: 
-1. Ejecutar el getToken.sh
-    ``` sh getToken.sh    ``` 
+1. Estar en la carpeta del repositorio y ejecutar el script getToken.sh
+    ``` 
+    sh getToken.sh  
+    o
+    bash getToken.sh
+      ``` 
 2. Durante la ejecución nos generará una url para obtener los permisos que serán concedidos al proyecto para obtener un código que nos entrega google. El código se muestra en el módulo de archivos del sistema. Este código se debe ingresar dentro de la terminal, si todo sale correcto nos generará el **token.json**.

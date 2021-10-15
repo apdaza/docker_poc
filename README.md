@@ -23,14 +23,7 @@
 
 ## Obtención del token.json
 
-Para la obtención del token una vez descargado las credenciales se debe realizar lo siguiente.
-1. Ingresar al contenedor web
-    ```
-    sudo docker exec it <idContenedorWeb> /bin/bash
-    cd manageFiles
-    ``` 
-2. Ahora para obtener el cliente digitamos lo siguiente: 
-    ```
-    $ php client_google.php
-    ```
-    Durante la ejecución nos generará una url para obtener los permisos que serán concedidos al proyecto para obtener un código que nos entrega google. Este código se debe ingresar dentro de la terminal, si todo sale correcto nos generará el **token.json**.
+Para la obtención del token una vez descargado las credenciales se debe realizar lo siguiente: 
+1. Ejecutar el getToken.sh
+    ``` sh getToken.sh    ``` 
+2. Durante la ejecución nos generará una url para obtener los permisos que serán concedidos al proyecto para obtener un código que nos entrega google. El código se muestra en el módulo de archivos del sistema. Este código se debe ingresar dentro de la terminal, si todo sale correcto nos generará el **token.json**.

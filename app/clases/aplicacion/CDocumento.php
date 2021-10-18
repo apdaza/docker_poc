@@ -104,27 +104,37 @@ Class CDocumento{
 					$tipo = $this->dd->getTipoNombreById ($this->tipo);
 					$tema = $this->dd->getTemaNombreById ($this->tema);
 					$subtema = $this->dd->getSubtemaNombreById ($this->subtema);
-
+					
 					$dirOperador=$this->dd->getDirectorioOperador($this->operador);
-
-					$ruta = strtolower(RUTA_DOCUMENTOS."/".$dirOperador.$tipo."/".$tema."/");
-
+					$tipoUn = explode(' ', $tipo);
+					$temaUn = explode(' ', $tema);
+					$subtemaUn = explode(' ', $subtema);
+					$tipoDef = $this->replace_spaces_underline($tipoUn);
+					$temaDef = $this->replace_spaces_underline($temaUn);
+					$subtemaDef = $this->replace_spaces_underline($subtemaUn);
+					$ruta = strtolower($_SERVER['DOCUMENT_ROOT']."/".RUTA_DOCUMENTOS."d/".$dirOperador.$tipoDef."/".$temaDef."/".$subtemaDef."/");
+					
 					$cad = $_SERVER['DOCUMENT_ROOT'].$_SERVER['PHP_SELF'];
-
-					mkdir($ruta,0777,true);
-
-					if(!move_uploaded_file($archivo['tmp_name'], strtolower($ruta).$archivo['name'])){
-						$r = ERROR_COPIAR_ARCHIVO;
-					}else{
-
+					if (is_dir($ruta)){
+						echo "<p> existe una carpeta</p>";
+						$movArchivo = move_uploaded_file($archivo['tmp_name'], $ruta.$archivo['name']);
+					}else {						
+						echo "<p> Creando la carpeta en la ruta: ".$ruta."";
+						mkdir($ruta,0777,true);
+						$movArchivo = move_uploaded_file($archivo['tmp_name'], $ruta.$archivo['name']);
+					}
+					if($movArchivo == true){
 						$this->archivo=$archivo['name'];
 						$i = $this->dd->insertDocumento($this->tipo,$this->tema,$this->subtema,$this->fecha,
-														$this->descripcion,$this->archivo,$this->version,$this->estado,$this->operador);
+						$this->descripcion,$this->archivo,$this->version,$this->estado,$this->operador);
 						if($i == "true"){
 							$r = DOCUMENTO_AGREGADO;
 						}else{
 							$r = ERROR_ADD_DOCUMENTO;
 						}
+					}else{
+						echo "<p> No lo movio: ".$noMatch." and ".$ruta."";
+						$r = ERROR_COPIAR_ARCHIVO;
 					}
 				}else{
 					$r = ERROR_SIZE_ARCHIVO;
@@ -137,6 +147,17 @@ Class CDocumento{
 		}
 		return $r;
 
+	}
+	function replace_spaces_underline($nombre){
+		$nombreReem = '';
+		for ($i=0; $i < count($nombre); $i++) { 
+			if ($i == count($nombre) - 1) {
+				$nombreReem .= $nombre[$i];
+				break;
+			}
+			$nombreReem .= $nombre[$i].'_';
+		}
+		return $nombreReem;
 	}
 /**
 ** elimina un objeto DOCUMENTO y retorna un mensaje del resultado del proceso

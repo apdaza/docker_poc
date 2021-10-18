@@ -21,9 +21,11 @@
 * @version 2020.01
 * @copyright apdaza
 */
+	//include("/var/www/html/modulos/documentos/archivos.php");
 	//no permite el acceso directo
 	defined('_VALID_PRY') or die('Restricted access');
 	$docData 		= new CDocumentoData($db);
+	$archivoG		= new CArchivo();
 	$operador		= $_REQUEST['operador'];
 	$task 			= $_REQUEST['task'];
 	if(empty($task)) $task = 'list';
@@ -209,6 +211,7 @@
 							 DOCUMENTO_SUBTEMA,DOCUMENTO_DESCRIPCION,DOCUMENTO_ARCHIVO,
 							 DOCUMENTO_FECHA,DOCUMENTO_VERSION,
 							 DOCUMENTO_ESTADO);
+			echo "<p> Doc: " . $criterio . "</p>";
 			$dt->setDataRows($documentos);
 			$dt->setTitleRow($titulos);
 			
@@ -334,10 +337,16 @@
 			$form->addInputText('hidden','txt_descripcion','txt_descripcion','15','15',$descripcion,'','');
 			$form->addInputText('hidden','operador','operador','15','15',$operador,'','');
 			
-			$form->addInputButton('button','ok','ok',BTN_ACEPTAR,'button','onclick="validar_add_documento();"');
+			$form->addInputButton('button','ok','subirArchivo',BTN_ACEPTAR,'button','onclick="validar_add_documento();"');
+			//$form->addInputButton('submit','subirArchivo','subirArchivo',BTN_ACEPTAR,'','');
 			$form->addInputButton('button','cancel','cancel',BTN_CANCELAR,'button','onclick="cancelarAccion(\'frm_add_documento\',\'?mod='.$modulo.'&task=list&niv='.$niv.'&txt_fecha_inicio='.$fecha_inicio.'&txt_fecha_fin='.$fecha_fin.'&sel_tipo='.$tipo.'&sel_tema='.$tema.'&sel_subtema='.$subtema.'&sel_estado='.$estado.'&txt_descripcion='.$descripcion.'&operador='.$operador.'\');"');
 
 			$form->writeForm();
+
+			if( isset( $_POST['subirArchivo'] ) ){
+				$archivoG->ins_file_to_folder($_FILES['file_documento_add'], $_REQUEST['sel_tipo_add']);
+				// $archivoG->create_subFolder('serpent', 'oroborus');
+			}
 			
 		break;
 		/**
@@ -367,7 +376,6 @@
 										'',$version_add,$estado_add,$operador,$docData);
 
 			$m = $documento->saveNewDocumento($archivo);
-
 			echo $html->generaAviso($m,"?mod=".$modulo."&niv=".$niv."&task=list&txt_fecha_inicio=".$fecha_inicio."&txt_fecha_fin=".$fecha_fin."&sel_tipo=".$tipo."&sel_tema=".$tema."&sel_subtema=".$subtema."&sel_estado=".$estado."&txt_descripcion=".$descripcion."&operador=".$operador);
 			
 		break;
@@ -732,5 +740,6 @@
 		
 		break;
 	}
+	
 ?>
 

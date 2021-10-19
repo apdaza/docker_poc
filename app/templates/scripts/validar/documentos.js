@@ -32,6 +32,9 @@ function validar_add_documento(){
 		mostrarDiv('error_documento');
 		return false;
 	}
+	
+}
+function sendFiletoDb() {
 	document.getElementById('frm_add_documento').action='?mod=documentos&niv=1&task=saveAdd';
 	document.getElementById('frm_add_documento').submit();
 }

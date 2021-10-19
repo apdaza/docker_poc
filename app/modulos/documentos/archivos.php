@@ -65,9 +65,9 @@
 			
 			if( isset( $_POST['subirArchivo'] ) ){
 				
-				$archivo->ins_file_to_folder2($_POST['file'], $_POST['carpeta'],'test2', 'test3');
+				$archivo->ins_file_to_folder2($_FILES['file'], $_POST['carpeta'],'test2', 'test3');
 				// $archivo->ins_file_to_folder($_POST['file'], $_POST['carpeta']);
-				echo "<h1> Archivo Subido </h1>";
+				// echo "<h1> Archivo Subido </h1>";
 			}
 			
 			if( isset( $_GET['list_files_and_folders'] ) ){

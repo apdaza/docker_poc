@@ -90,7 +90,7 @@ Class CDocumento{
 /**
 ** almacena un objeto DOCUMENTO y retorna un mensaje del resultado del proceso
 **/
-	function saveNewDocumento($archivo){
+	function saveNewDocumento($archivo, $url){
 		$r = "";
 		$extension = explode(".",$archivo['name']);
 		$num = count($extension)-1;
@@ -113,7 +113,7 @@ Class CDocumento{
 					$temaDef = $this->replace_spaces_underline($temaUn);
 					$subtemaDef = $this->replace_spaces_underline($subtemaUn);
 					$ruta = strtolower($_SERVER['DOCUMENT_ROOT']."/".RUTA_DOCUMENTOS."d/".$dirOperador.$tipoDef."/".$temaDef."/".$subtemaDef."/");
-					
+					echo "tmp_name: ".$archivo['tmp_name'];
 					$cad = $_SERVER['DOCUMENT_ROOT'].$_SERVER['PHP_SELF'];
 					if (is_dir($ruta)){
 						echo "<p> existe una carpeta</p>";
@@ -125,8 +125,9 @@ Class CDocumento{
 					}
 					if($movArchivo == true){
 						$this->archivo=$archivo['name'];
+						
 						$i = $this->dd->insertDocumento($this->tipo,$this->tema,$this->subtema,$this->fecha,
-						$this->descripcion,$this->archivo,$this->version,$this->estado,$this->operador);
+						$this->descripcion,$url,$this->version,$this->estado,$this->operador);
 						if($i == "true"){
 							$r = DOCUMENTO_AGREGADO;
 						}else{

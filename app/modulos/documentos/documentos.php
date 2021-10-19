@@ -211,7 +211,6 @@
 							 DOCUMENTO_SUBTEMA,DOCUMENTO_DESCRIPCION,DOCUMENTO_ARCHIVO,
 							 DOCUMENTO_FECHA,DOCUMENTO_VERSION,
 							 DOCUMENTO_ESTADO);
-			echo "<p> Doc: " . $criterio . "</p>";
 			$dt->setDataRows($documentos);
 			$dt->setTitleRow($titulos);
 			
@@ -337,16 +336,20 @@
 			$form->addInputText('hidden','txt_descripcion','txt_descripcion','15','15',$descripcion,'','');
 			$form->addInputText('hidden','operador','operador','15','15',$operador,'','');
 			
-			$form->addInputButton('button','ok','subirArchivo',BTN_ACEPTAR,'button','onclick="validar_add_documento();"');
-			//$form->addInputButton('submit','subirArchivo','subirArchivo',BTN_ACEPTAR,'','');
+			// $form->addInputButton('submit','ok','subirArchivo','Subir','button','onclick="validar_add_documento();"');
+			$form->addInputButton('submit','ok','subirArchivo',BTN_ACEPTAR,'button','onclick="validar_add_documento();"');
 			$form->addInputButton('button','cancel','cancel',BTN_CANCELAR,'button','onclick="cancelarAccion(\'frm_add_documento\',\'?mod='.$modulo.'&task=list&niv='.$niv.'&txt_fecha_inicio='.$fecha_inicio.'&txt_fecha_fin='.$fecha_fin.'&sel_tipo='.$tipo.'&sel_tema='.$tema.'&sel_subtema='.$subtema.'&sel_estado='.$estado.'&txt_descripcion='.$descripcion.'&operador='.$operador.'\');"');
+			$form->addInputButton('button','enviar','enviarArchivo','Enviar','button','onclick="sendFiletoDb();"');
 
 			$form->writeForm();
 
-			if( isset( $_POST['subirArchivo'] ) ){
-				$archivoG->ins_file_to_folder($_FILES['file_documento_add'], $_REQUEST['sel_tipo_add']);
-				// $archivoG->create_subFolder('serpent', 'oroborus');
-			}
+			// $tipoName = strtolower(str_replace(' ', '_', $docData->getTipoNombreById($_REQUEST['sel_tipo_add'])));
+			// $temaName = strtolower(str_replace(' ', '_', $docData->getTemaNombreById($_REQUEST['sel_tema_add'])));
+			// $subtemaName = strtolower(str_replace(' ', '_', $docData->getSubtemaNombreById ($_REQUEST['sel_subtema_add'])));
+
+			// if( isset( $_POST['subirArchivo'] ) ){
+			// 	$archivoG->ins_file_to_folder2($_FILES['file_documento_add'], $tipoName, $temaName, $subtemaName);
+			// }
 			
 		break;
 		/**
@@ -375,7 +378,13 @@
 										$fecha_add,$descripcion_add,
 										'',$version_add,$estado_add,$operador,$docData);
 
-			$m = $documento->saveNewDocumento($archivo);
+			$tipoName = strtolower(str_replace(' ', '_', $docData->getTipoNombreById($_REQUEST['sel_tipo_add'])));
+			$temaName = strtolower(str_replace(' ', '_', $docData->getTemaNombreById($_REQUEST['sel_tema_add'])));
+			$subtemaName = strtolower(str_replace(' ', '_', $docData->getSubtemaNombreById ($_REQUEST['sel_subtema_add'])));
+			$url_archivo = $archivoG->ins_file_to_folder2($archivo, $tipoName, $temaName, $subtemaName);
+			
+			$m = $documento->saveNewDocumento($archivo, $url_archivo);
+			echo "name: ".$archivo['name']."size: ".$archivo['size']."tmp: ".$archivo['tmp_name'];
 			echo $html->generaAviso($m,"?mod=".$modulo."&niv=".$niv."&task=list&txt_fecha_inicio=".$fecha_inicio."&txt_fecha_fin=".$fecha_fin."&sel_tipo=".$tipo."&sel_tema=".$tema."&sel_subtema=".$subtema."&sel_estado=".$estado."&txt_descripcion=".$descripcion."&operador=".$operador);
 			
 		break;

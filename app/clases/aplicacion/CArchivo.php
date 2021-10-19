@@ -59,21 +59,14 @@ Class CArchivo{
         echo "</ul>";
     }
     function ins_file_to_folder($archiv, $fParent){
-        //if( empty( $_FILES["file_documento_add"]['tmp_name'] ) ){
-        if( empty( $_FILES["file"]['tmp_name'] ) ){
+        if( empty( $archiv['tmp_name'] ) ){
             echo "Go back and Select file to upload.";
             exit;
         }
-        /*
-        $file_tmp  = $_FILES["file_documento_add"]["tmp_name"];
-        $file_type = $_FILES["file_documento_add"]["type"];
-        $file_name = basename($_FILES["file_documento_add"]["name"]);*/
 
-        $file_tmp  = $_FILES["file"]["tmp_name"];
-        $file_type = $_FILES["file"]["type"];
-        $file_name = basename($_FILES["file"]["name"]);
-        echo "<p>".$file_tmp." - ".$file_type." - ".$file_name;
-        // $path = "uploads/".$file_name;
+        $file_tmp  = $archiv["tmp_name"];
+        $file_type = $archiv["type"];
+        $file_name = basename($archiv["name"]);
         $path = $_SERVER['DOCUMENT_ROOT']."/".$file_name;
 
         move_uploaded_file($file_tmp, $path);
@@ -89,43 +82,34 @@ Class CArchivo{
         }
     }
     function ins_file_to_folder2($archiv, $fParent, $fChild, $fGrandson){
-        if( empty( $_FILES["file"]['tmp_name'] ) ){
+        if( empty( $archiv['tmp_name'] ) ){
             echo "Go back and Select file to upload.";
             exit;
         }
+        
+        $file_tmp  = $archiv["tmp_name"];
+        $file_type = $archiv["type"];
+        $file_name = basename($archiv["name"]);
 
-        $file_tmp  = $_FILES["file"]["tmp_name"];
-        $file_type = $_FILES["file"]["type"];
-        $file_name = basename($_FILES["file"]["name"]);
-        //$path = "uploads/".$fParent."/".$fChild."/".$fGrandson."/".$file_name;
-        echo "<p>".$file_tmp." - ".$file_type." - ".$file_name." - sz:".$_FILES["file"]["size"];
-
-        //$path = "uploads/".$fParent."/".$fChild."/".$file_name;
         $path = $_SERVER['DOCUMENT_ROOT']."/".$file_name;
 
 
-        move_uploaded_file($file_tmp, $path);
+        // move_uploaded_file($file_tmp, $path);
+        copy($file_tmp, $path);
 
         $first_folder = $this->create_folder( $fParent );
-        echo "<p> primera carpeta creada!</p>";
         $second_folder = $this->insert_folder_to_drive($fChild, $first_folder);
-        echo "<p> segunda carpeta creada!</p>";
         $third_folder = $this->insert_folder_to_drive($fGrandson, $second_folder);
 
-        $success = $this->insert_file_to_drive( $path , $file_name, $third_folder);
-
-        if( $success ){
-            echo "file uploaded successfully";
-        } else { 
-            echo "Something went wrong.";
-        }
+        $file_id = $this->insert_file_to_drive( $path , $file_name, $third_folder);
+        $const_url = "https://drive.google.com/file/d/".$file_id;
+        // echo "<p> file url: <a href='".$const_url."'</a></p>";
+        return $const_url;
+        
     }
     function insert_file_to_drive( $file_path, $file_name, $parent_file_id = null ){
         $service = new Google_Service_Drive($GLOBALS['client']);
         $file = new Google_Service_Drive_DriveFile();
-
-        echo "<p> Entro archivo!</p>".$file_path." -name: ".$file_name." - sz:".$_FILES["file"]["size"];
-
 
         $file->setName( $file_name );
 
@@ -140,13 +124,12 @@ Class CArchivo{
                 'uploadType' => 'media'
             )
         );
-        $is_success = false;
+        $file_id = null;
 
-        if( isset( $result['name'] ) && !empty( $result['name'] ) ){
-            $is_success = true;
+        if( isset( $result['id'] ) && !empty( $result['id'] ) ){
+            $file_id = $result['id'];
         }
-
-        return $is_success;
+        return $file_id;
     }
     function insert_folder_to_drive($folder_name, $parent_file_id = null ){
         $folder_list = $this->check_folder_exists( $folder_name );
@@ -207,23 +190,9 @@ Class CArchivo{
         $op = [];
         foreach( $files as $k => $file ){
             $op[] = $file;
-            echo "<li> {$file['name']} - {$file['id']} ---- ".$file['mimeType'];
-
         }
 
         return $op;	
-    }
-    function ins_folder_to_folder($fChild, $fParent){        
-
-        $folder_id = $this->create_folder( $fParent );
-
-        $success = $this->insert_folder_to_drive( $fChild, $folder_id);
-
-        if( $success ){
-            echo "folders uploaded successfully";
-        } else { 
-            echo "Something went wrong.";
-        }
     }
     
 }

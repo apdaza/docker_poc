@@ -194,6 +194,26 @@ Class CArchivo{
 
         return $op;	
     }
+    function check_file_exists( $file_name ){
+        $service = new Google_Service_Drive($GLOBALS['client']);
+        $parameters['q'] = "mimeType='application/octet-stream' and name='$file_name' and trashed=false";
+        $files = $service->files->listFiles($parameters);
+        $op = [];
+        foreach( $files as $k => $file ){
+            $op[] = $file;
+        }
+        echo "title: ". $op['title'];
+        return $op;	
+    }
+    function deleteFile($fileId) {
+        
+        try {
+            $service = new Google_Service_Drive($GLOBALS['client']);
+            $service->files->delete($fileId);
+        } catch (Exception $e) {
+            print "An error occurred: " . $e->getMessage();
+        }
+      }
     
 }
 ?>

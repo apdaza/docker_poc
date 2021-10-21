@@ -133,7 +133,6 @@ Class CDocumento{
 							$r = ERROR_ADD_DOCUMENTO;
 						}
 					}else{
-						echo "<p> No lo movio: ".$noMatch." and ".$ruta."";
 						$r = ERROR_COPIAR_ARCHIVO;
 					}
 				}else{
@@ -167,11 +166,18 @@ Class CDocumento{
 		$tema = $this->dd->getTemaNombreById ($this->tema);
 		$subtema = $this->dd->getSubtemaNombreById ($this->subtema);
 		$dirOperador=$this->dd->getDirectorioOperador($this->operador);
-		$ruta = RUTA_DOCUMENTOS."/".$dirOperador.$tipo."/".$tema."/";
+		$tipoUn = explode(' ', $tipo);
+		$temaUn = explode(' ', $tema);
+		$subtemaUn = explode(' ', $subtema);
+		$tipoDef = $this->replace_spaces_underline($tipoUn);
+		$temaDef = $this->replace_spaces_underline($temaUn);
+		$subtemaDef = $this->replace_spaces_underline($subtemaUn);
+		$ruta = strtolower($_SERVER['DOCUMENT_ROOT']."/".RUTA_DOCUMENTOS."d/".$dirOperador.$tipoDef."/".$temaDef."/".$subtemaDef."/");
+		
 		chmod($ruta, 0777);
 		$r = $this->dd->deleteDocumento($this->id);
 		if($r=='true'){
-			unlink(strtolower($ruta).$archivo);
+			unlink($ruta.$archivo);
 			$msg = DOCUMENTO_BORRADO;
 		}else{
 			$msg = ERROR_DEL_DOCUMENTO;

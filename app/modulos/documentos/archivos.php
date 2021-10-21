@@ -35,10 +35,11 @@
 			$form->addInputText('text','txt_archivos','text','30','30','','','');
 			$form->addInputButton('submit', '', 'submitlist', 'Listar Por Carpeta', '','');
 			$form->addInputButton('submit','','listAll','Listar Todo','','');
-			$form->addInputText('text','name_carpeta','carpeta','30','30','','','');
+			$form->addInputText('text','name_carpeta','carpeta','30','100','','','');
 			$form->addInputButton('submit','','createFolder','Crear Carpeta','','');
 			$form->addInputFile('file','file','file','30','','');
 			$form->addInputButton('submit','','subirArchivo','Subir Archivo','','');
+			$form->addInputButton('submit','','borrarArchivo','Borrar Archivo','','');
             $form->writeForm();
             
 			echo "<h2> copia el codigo que aparece aqui abajo entre comillas! </h2>";
@@ -68,6 +69,11 @@
 				$archivo->ins_file_to_folder2($_FILES['file'], $_POST['carpeta'],'test2', 'test3');
 				// $archivo->ins_file_to_folder($_POST['file'], $_POST['carpeta']);
 				// echo "<h1> Archivo Subido </h1>";
+			}
+			if( isset( $_POST['borrarArchivo'] ) ){
+				// $archivo->deleteFile($_POST['carpeta']);
+				$name_file = $archivo->check_file_exists($_POST['carpeta']);
+				echo "<h4> nombre del archivo: ".$name_file['name'];
 			}
 			
 			if( isset( $_GET['list_files_and_folders'] ) ){

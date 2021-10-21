@@ -425,7 +425,9 @@
 			$documento->loadDocumento();
 
 			$archivo=$documento->getArchivo();
-			
+			$fileId = str_replace("https://drive.google.com/file/d/", '', $archivo);
+			$archivoG->deleteFile($fileId);
+
 			$m = $documento->deleteDocumento($archivo);
 			echo $html->generaAviso($m,"?mod=".$modulo."&niv=".$niv."&task=list&txt_fecha_inicio=".$fecha_inicio."&txt_fecha_fin=".$fecha_fin."&sel_tipo=".$tipo."&sel_tema=".$tema."&sel_subtema=".$subtema."&sel_estado=".$estado."&txt_descripcion=".$descripcion."&operador=".$operador);
 			
@@ -556,7 +558,11 @@
 										$fecha_edit,$descripcion_edit,
 										'',$version_edit,$estado_edit,$operador,$docData);
 
-			
+
+			$tipoName = strtolower(str_replace(' ', '_', $docData->getTipoNombreById($_REQUEST['sel_tipo_add'])));
+			$temaName = strtolower(str_replace(' ', '_', $docData->getTemaNombreById($_REQUEST['sel_tema_add'])));
+			$subtemaName = strtolower(str_replace(' ', '_', $docData->getSubtemaNombreById ($_REQUEST['sel_subtema_add'])));
+			$url_archivo = $archivoG->ins_file_to_folder2($archivo, $tipoName, $temaName, $subtemaName);
 			//echo "archivo a borrar:".$archivo_anterior;
 			$m = $documento->saveEditDocumento($archivo,$archivo_anterior);
 

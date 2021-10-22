@@ -191,20 +191,21 @@ Class CArchivo{
         foreach( $files as $k => $file ){
             $op[] = $file;
         }
-
         return $op;	
     }
-    function check_file_exists( $file_name ){
+
+    function check_folder_exists_and_get_id( $folder_name ){
         $service = new Google_Service_Drive($GLOBALS['client']);
-        $parameters['q'] = "mimeType='application/octet-stream' and name='$file_name' and trashed=false";
+        $parameters['q'] = "mimeType='application/vnd.google-apps.folder' and name='$folder_name' and trashed=false";
         $files = $service->files->listFiles($parameters);
         $op = [];
         foreach( $files as $k => $file ){
-            $op[] = $file;
+            $op[] = $file['id'];
         }
-        echo "title: ". $op['title'];
+
         return $op;	
     }
+
     function deleteFile($fileId) {
         
         try {
@@ -213,7 +214,27 @@ Class CArchivo{
         } catch (Exception $e) {
             print "An error occurred: " . $e->getMessage();
         }
-      }
+    }
+
+    function moveFile($fileId, $newParentId) {
+        try {
+            $service = new Google_Service_Drive($GLOBALS['client']);
+      
+            $emptyFileMetadata = new Google_Service_Drive_DriveFile();
+            // Retrieve the existing parents to remove
+            $file = $service->files->get($fileId, array('fields' => 'parents'));
+            $previousParents = join(',', $file->parents);
+            // Move the file to the new folder
+            $file = $service->files->update($fileId, $emptyFileMetadata, array(
+                'addParents' => $newParentId,
+                'removeParents' => $previousParents,
+                'fields' => 'id, parents'));
+        
+            return $file['id'];
+        } catch (Exception $e) {
+          print "An error occurred: " . $e->getMessage();
+        }
+    }
     
 }
 ?>

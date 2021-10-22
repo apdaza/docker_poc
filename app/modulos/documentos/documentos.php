@@ -559,12 +559,34 @@
 										'',$version_edit,$estado_edit,$operador,$docData);
 
 
-			$tipoName = strtolower(str_replace(' ', '_', $docData->getTipoNombreById($_REQUEST['sel_tipo_add'])));
-			$temaName = strtolower(str_replace(' ', '_', $docData->getTemaNombreById($_REQUEST['sel_tema_add'])));
-			$subtemaName = strtolower(str_replace(' ', '_', $docData->getSubtemaNombreById ($_REQUEST['sel_subtema_add'])));
-			$url_archivo = $archivoG->ins_file_to_folder2($archivo, $tipoName, $temaName, $subtemaName);
+			$tipoName = strtolower(str_replace(' ', '_', $docData->getTipoNombreById($_REQUEST['sel_tipo_edit'])));
+			$temaName = strtolower(str_replace(' ', '_', $docData->getTemaNombreById($_REQUEST['sel_tema_edit'])));
+			$subtemaName = strtolower(str_replace(' ', '_', $docData->getSubtemaNombreById ($_REQUEST['sel_subtema_edit'])));
 			//echo "archivo a borrar:".$archivo_anterior;
-			$m = $documento->saveEditDocumento($archivo,$archivo_anterior);
+			$fileId = str_replace("https://drive.google.com/file/d/", '', $archivo_anterior);
+			if ($archivo['name'] != null){ //verifica si se añade un nuevo archivo a la edicion
+				$archivoG->deleteFile($fileId);
+				$url_archivo = $archivoG->ins_file_to_folder2($archivo, $tipoName, $temaName, $subtemaName);
+				$m = $documento->saveEditDocumento($archivo, $archivo_anterior, $url_archivo);
+			}else{ //No añade un nuevo archivo a la edicion
+				$oldSubTema = strtolower($documento->getSubtema());
+				if ($oldSubTema != $subtemaName){ //Se verifica si cambia el subtema
+					$temaId = $archivoG->check_folder_exists_and_get_id($temaName);
+					$newSubTemaId = $archivoG->check_folder_exists_and_get_id($subtemaName);
+					if (count($newSubTemaId) == 0){ //Si no hay una carpeta creada del nuevo subtema seleccionado
+						$newSubTema_id = $archivoG->create_folder($subtemaName, $temaId[0]);
+						$newUrl = $archivoG->moveFile($fileId, $newSubTema_id);
+						$m = $documento->saveEditDocumento($archivo, $archivo_anterior, $newUrl);
+					}else{//Si hay una carpeta creada del nuevo subtema seleccionado
+						$newUrl = $archivoG->moveFile($fileId, $newSubTemaId[0]);
+						$m = $documento->saveEditDocumento($archivo, $archivo_anterior, $newUrl);
+					}
+				}else{// Si no cambia el archivo ni el subtema.
+					$m = $documento->saveEditDocumento($archivo, $archivo_anterior, $archivo_anterior);
+				}
+
+			}
+
 
 			echo $html->generaAviso($m,"?mod=".$modulo."&niv=".$niv."&task=list&txt_fecha_inicio=".$fecha_inicio."&txt_fecha_fin=".$fecha_fin."&sel_tipo=".$tipo."&sel_tema=".$tema."&sel_subtema=".$subtema."&sel_estado=".$estado."&txt_descripcion=".$descripcion."&operador=".$operador);
 			

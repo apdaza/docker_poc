@@ -58,10 +58,15 @@
 			}
 			
 			if( isset( $_POST['createFolder'] ) ){
-				echo "<h1> Folder Creado </h1>";
-				
+				// $ids = $archivo->create_folder($_POST['carpeta'], '1we528c5R_U0EWi6ybDlJApkH2c8zO9ST');
+				$ids = $archivo->check_folder_exists_and_get_id($_POST['carpeta']);
+				echo "<h6> Folder id: ".$ids[0]."</h6>";
+				/*
+				foreach( $ids as $i => $folder_id ){
+
+					echo "<h6> Folder id: ".$folder_id."</h6>";
+				}*/
 				//$archivo->ins_folder_to_folder("testHijo", $_POST['carpeta']);
-				$archivo->create_folder($_POST['carpeta']);
 			}
 			
 			if( isset( $_POST['subirArchivo'] ) ){

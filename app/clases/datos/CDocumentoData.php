@@ -171,7 +171,8 @@ Class CDocumentoData{
 				$documentos[$cont]['tema'] = $w['dot_nombre'];
 				$documentos[$cont]['subtema'] = $w['dos_nombre'];
 				$documentos[$cont]['descripcion'] = $w['doc_descripcion'];
-				$documentos[$cont]['nombre'] ="<a href='././soportes/".strtolower($dirOperador.$w['dti_nombre']."/".$w['dot_nombre']."/").$w['doc_archivo']."' target='_blank'>{$w['doc_archivo']}</a>";
+				// $documentos[$cont]['nombre'] ="<a href='".$w['doc_archivo']."' target='_blank'>{$w['doc_archivo']}</a>";
+				$documentos[$cont]['nombre'] ="<a href='".$w['doc_archivo']."' target='_blank'>"."Ver archivo"."</a>";
 				$documentos[$cont]['fecha'] = $w['doc_fecha'];
 				$documentos[$cont]['version'] = $w['doc_version'];
 				$documentos[$cont]['estado'] = $w['doe_nombre'];

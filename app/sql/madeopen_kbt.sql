@@ -1795,7 +1795,7 @@ INSERT INTO `opcion` (`opc_id`, `opc_nombre`, `opc_variable`, `opc_url`, `opn_id
 (66, 'Documental', 'documentos', 'documentos/documentos.php', 1, 2, 202000, '', 1),
 (67, 'Comunicados', 'comunicados', 'documentos/comunicados.php', 1, 2, 201000, '', 1),
 (68, 'Compromisos', 'compromisos', 'documentos/compromisos.php', 1, 2, 203000, '', 1),
-(87, 'Archivos', 'archivos', 'documentos/archivos.php', 1, 2, 209000, '', 1),
+(87, 'Obtencion token', 'getToken', 'documentos/obtencion_token.php', 1, 2, 209000, '', 1),
 (86, 'Riesgos', 'riesgos', 'riesgos/riesgos.php', 1, 2, 204000, '', 1);
 
 -- --------------------------------------------------------

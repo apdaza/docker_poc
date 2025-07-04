@@ -6,7 +6,7 @@
 - en el navegador abrir http://localhost:8890/
 - usuario: admin, clave: test
 - importar para la base de datos el archivo madeopen_kbt.sql
-- en el navegador abrir http://localhost/
+- en el navegador abrir http://localhost:8080/
 - usuario: admin, clave:admin
 
 ## Configuración cliente de Google y API
